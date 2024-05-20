@@ -38,7 +38,10 @@ main {
   padding: 0;
   font-family: "Inter", sans-serif;
   font-weight: 800;
+
   font-size: x-large;
+
+
   cursor: pointer;
   border-radius: 1px;
   box-shadow: 10px 0px 13px -7px #00ffff, -10px 0px 13px -7px #00ffff,
@@ -48,5 +51,8 @@ main {
 
 .purpleColor {
   background: linear-gradient(180deg, #d20094, #900080);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
