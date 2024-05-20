@@ -31,14 +31,21 @@
       <div id="testo2">
         <br />
         <ul>
-          <li>Each question is <span class="evidenziato">timed</span> and can only be <span class="evidenziato">anwered once.</span></li>
+          <li>Each question is <span class="evidenziato">timed</span> and can only be <span class="evidenziato">answered once.</span></li>
           <li>Changing browser tab or opening other windows will <span class="evidenziato">invalidate the question.</span></li>
           <li>This exam will take approx. <span class="evidenziato">0-5 minutes.</span></li>
         </ul>
       </div>
       <br />
-      <div class="condizione"><input type="checkbox" id="condition" />I promise to answer myself without help from anyone</div>
-      <button class="glowButton" onclick="proceed()">PROCEED</button>
+      <div class="condizione">
+        <form>
+          <label class="customCheckbox">
+            <input type="checkbox" id="condition" />
+            <span class="checkmark"></span> I promise to answer myself without help from anyone
+            <button class="glowButton" onclick="proceed()">PROCEED</button>
+          </label>
+        </form>
+      </div>
     </main>
     <script src="./script.js"></script>
   </body>
