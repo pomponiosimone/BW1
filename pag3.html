@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/CSS/reset.css" />
+    <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <link rel="stylesheet" href="./assets/CSS/stylePag3.css" />
+    <title>Results</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="./assets/img/epicode_logo.png"
+        alt="epicode-logo"
+        id="logoImage"
+      />
+    </header>
+    <main>
+      <h2>Results</h2>
+      <h4>The sommary of your answers:</h4>
+      <div id="container">
+        <div id="correctAnswer" class="answers">
+          <h3>Correct</h3>
+          <p class="risultatoPercentuale">66.7%</p>
+          <p>4/6 questions</p>
+        </div>
+        <div id="pieChart" class="answers">
+          <div id="pieChart">
+            <!-- Qua va inserito il commento: "congratulazioni!"" se hai passato il
+                questionario oppure "Fallito!" se non l'hai passato. -->
+          </div>
+        </div>
+        <div id="uncorrectAnswer" class="answers">
+          <h3>Wrong</h3>
+          <p class="risultatoPercentuale">33.3%</p>
+          <p>2/6 questions</p>
+        </div>
+      </div>
+      <section>
+        <button type="button" id="rateUs" href="#">RATE US</button>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
