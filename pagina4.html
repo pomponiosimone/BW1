@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="./assets/CSS/reset.css" />
     <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <link rel="stylesheet" href="./assets/CSS/stylePag4.css" />
     <title>Document</title>
   </head>
   <body>
@@ -31,26 +32,33 @@
           From 0 to 10, how likely are you recommend EPICODE<br />to a friend or
           a colleague?
         </p>
-        <div id="rating">
-          <ul>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-            <li><img src="./assets/img/star.svg" class="star" /></li>
-          </ul>
-        </div>
       </section>
+      <div>
+        <ul id="rating">
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star"><img src="./assets/img/star.svg" /></li>
+          <li class="star" id="lastStar">
+            <img src="./assets/img/star.svg" />
+          </li>
+        </ul>
+      </div>
+
       <section>
         <p>Leave us a open feedback about your experience so far</p>
       </section>
       <form>
-        <textarea placeholder="Write your comment here"></textarea>
+        <textarea
+          maxlength="100"
+          placeholder="Write your comment here"
+        ></textarea>
+        <br />
         <button class="glowButton">MORE INFO</button>
       </form>
     </main>
