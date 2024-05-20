@@ -4,3 +4,4 @@ stars.forEach((star) => {
   star.addEventListener("mouseout", handleMouseOut);
   star.addEventListener("click", handleClick);
 });
+const handleMouseOver = () => {};
