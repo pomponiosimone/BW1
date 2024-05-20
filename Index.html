@@ -3,9 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- importazione fonts di google ('Outfit' ed 'Inter') -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/CSS/reset.css" />
+    <link rel="stylesheet" href="./assets/CSS/style.css" />
   </head>
   <body>
-    <script></script>
+    <header>
+      <img id="logoImage" src="./assets/img/epicode_logo.png" alt="logo" />
+    </header>
+    <main>
+      <div id="titolo1">Welcome to</div>
+      <div id="titolo2">your exam</div>
+      <div>Instructions</div>
+      <div>
+        <p>
+          We don't expect most engineers to know the answers to all of these
+          questions, so don't worry if you're unsure of a few of them
+        </p>
+      </div>
+      <br />
+      <ul>
+        <li>
+          Each question is <span class="evideziato">timed</span> and can only be
+          <span class="evideziato">anwered once.</span>
+        </li>
+        <li>
+          Changing browser tab or opening other windows will
+          <span class="evideziato">invalidate the question.</span>
+        </li>
+        <li>
+          This exam will take approx.
+          <span class="evideziato">0-5 minutes.</span>
+        </li>
+      </ul>
+      <br />
+      <input type="checkbox" id="condition" />I promise to answer myself without
+      help from anyone
+      <button id="proceed" onclick="proceed()">PROCEED</button>
+    </main>
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -1,0 +1,54 @@
+body {
+  margin: auto;
+  font-family: "Inter", sans-serif;
+  background-image: url(/assets/img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 0.6em;
+}
+
+p {
+  line-height: 1.8em;
+}
+
+#logoImage {
+  width: 17em;
+  text-align: left;
+  margin-left: 3em;
+  margin-top: 3em;
+  margin-bottom: 6em;
+}
+
+main {
+  text-align: center;
+  color: white;
+}
+
+.glowButton {
+  background-color: #00ffff;
+  width: 13%;
+  height: 3.5em;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-size: large;
+  cursor: pointer;
+  border-radius: 1px;
+  box-shadow: 10px 0px 13px -7px #00ffff, -10px 0px 13px -7px #00ffff,
+    0px 10px 13px -7px #00ffff, 0px -10px 13px -7px #00ffff;
+  border: 1px;
+}
+
+.purpleColor {
+  background: linear-gradient(180deg, #d20094, #900080);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
