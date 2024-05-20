@@ -44,8 +44,7 @@ main {
 
   cursor: pointer;
   border-radius: 1px;
-  box-shadow: 10px 0px 13px -7px #00ffff, -10px 0px 13px -7px #00ffff,
-    0px 10px 13px -7px #00ffff, 0px -10px 13px -7px #00ffff;
+  box-shadow: 10px 0px 13px -7px #00ffff, -10px 0px 13px -7px #00ffff, 0px 10px 13px -7px #00ffff, 0px -10px 13px -7px #00ffff;
   border: 1px;
 }
 

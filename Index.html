@@ -7,47 +7,45 @@
     <!-- importazione fonts di google ('Outfit' ed 'Inter') -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/CSS/reset.css" />
     <link rel="stylesheet" href="./assets/CSS/style.css" />
+
+    <link rel="stylesheet" href="./assets/CSS/styleIndex.css" />
   </head>
   <body>
     <header>
       <img id="logoImage" src="./assets/img/epicode_logo.png" alt="logo" />
     </header>
     <main>
-      <div id="titolo1">Welcome to</div>
-      <div id="titolo2">your exam</div>
-      <div>Instructions</div>
-      <div>
-        <p>
-          We don't expect most engineers to know the answers to all of these
-          questions, so don't worry if you're unsure of a few of them
-        </p>
+      <div id="testo1">
+        <h1 id="titolo1">Welcome to</h1>
+        <h1 id="titolo2">your exam</h1>
+
+        <div id="pink">Instructions</div>
+        <div id="article1">
+          <p>We don't expect most engineers to know the answers to all of these questions, so don't worry if you're unsure of a few of them</p>
+        </div>
+      </div>
+      <div id="testo2">
+        <br />
+        <ul>
+          <li>Each question is <span class="evidenziato">timed</span> and can only be <span class="evidenziato">answered once.</span></li>
+          <li>Changing browser tab or opening other windows will <span class="evidenziato">invalidate the question.</span></li>
+          <li>This exam will take approx. <span class="evidenziato">0-5 minutes.</span></li>
+        </ul>
       </div>
       <br />
-      <ul>
-        <li>
-          Each question is <span class="evideziato">timed</span> and can only be
-          <span class="evideziato">anwered once.</span>
-        </li>
-        <li>
-          Changing browser tab or opening other windows will
-          <span class="evideziato">invalidate the question.</span>
-        </li>
-        <li>
-          This exam will take approx.
-          <span class="evideziato">0-5 minutes.</span>
-        </li>
-      </ul>
-      <br />
-      <input type="checkbox" id="condition" />I promise to answer myself without
-      help from anyone
-      <button id="proceed" onclick="proceed()">PROCEED</button>
+      <div class="condizione">
+        <form>
+          <label class="customCheckbox">
+            <input type="checkbox" id="condition" />
+            <span class="checkmark"></span> I promise to answer myself without help from anyone
+            <button class="glowButton" onclick="proceed()">PROCEED</button>
+          </label>
+        </form>
+      </div>
     </main>
     <script src="./script.js"></script>
   </body>
