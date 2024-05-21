@@ -161,7 +161,7 @@
   z-index: 1000;
   font-size: 2em;
   color: white;
-  padding: 11px;
+  padding: 1px;
   line-height: 30px;
 }
 #time div span {
@@ -173,4 +173,9 @@
 
   color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.secondsRemaining {
+  display: inline-block;
+  padding: 1px;
+  line-height: 0px;
 }
