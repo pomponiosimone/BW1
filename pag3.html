@@ -10,39 +10,30 @@
   </head>
   <body>
     <header>
-      <img
-        src="./assets/img/epicode_logo.png"
-        alt="epicode-logo"
-        id="logoImage"
-      />
+      <img src="./assets/img/epicode_logo.png" alt="epicode-logo" id="logoImage" />
     </header>
     <main>
       <h2>Results</h2>
-      <h4>The sommary of your answers:</h4>
+      <h4>The summary of your answers:</h4>
       <div id="container">
         <div id="correctAnswer" class="answers">
-          <h3>Correct</h3>
-          <p class="risultatoPercentualeCorretto"></p>
-          <p id="qCorrect">4/6 questions</p>
+          <div class="rightWrong">Correct</div>
+          <p class="risultatoPercentuale">60%</p>
+          <p>6/10 questions</p>
         </div>
-        <div id="pieChart" class="answers">
-          <div id="pieChart">
-            <svg viewBox="0 0 200 200">
-              <circle cx="100" cy="100" r="100"></circle>
-            </svg>
-            <p></p>
-          </div>
+        <div class="answers">
+          <svg width="300" height="300" viewBox="0 0 300 300" id="pieChart"></svg>
         </div>
         <div id="uncorrectAnswer" class="answers">
-          <h3>Wrong</h3>
-          <p class="risultatoPercentualeSbagliato"></p>
-          <p id="qUncorrect">2/6 questions</p>
+          <div class="rightWrong">Wrong</div>
+          <p class="risultatoPercentuale">40%</p>
+          <p>4/10 questions</p>
         </div>
       </div>
       <section>
-        <button type="button" id="rateUs" href="./pagina4.html">RATE US</button>
+        <button type="button" id="rateUs" href="#">RATE US</button>
       </section>
     </main>
-    <script src="./script.js"></script>
+    <script src="./pieChart.js"></script>
   </body>
 </html>
