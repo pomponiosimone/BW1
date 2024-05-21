@@ -93,14 +93,46 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-let punteggio = [];
-const domande = () => {
-  const domanda = document.getElementById("domandaRND");
-  const risposta1 = document.getElementById("opzione1");
-  const risposta2 = document.getElementById("opzione2");
-  const risposta3 = document.getElementById("opzione3");
-  const risposta4 = document.getElementById("opzione4");
-  for (let index = 0; index < questions.length; index++) {
-    domanda.innerText = questions[index].question;
-  }
+let punteggio = 0;
+let currentQuestionIndex = 0;
+const domandaElement = document.getElementById("domandaRND");
+const container = document.getElementById("container");
+
+const mostraDomande = (questionIndex) => {
+  const domandaCorrente = questions[questionIndex];
+  domandaElement.innerText = domandaCorrente.question;
+  container.innerHTML = "";
+
+  let risposte = [...domandaCorrente.incorrect_answers];
+  risposte.splice(
+    Math.floor(Math.random() * (risposte.length + 1)),
+    0,
+    domandaCorrente.correct_answer
+  );
+
+  risposte.forEach((answer) => {
+    const button = document.createElement("div");
+    button.classList.add("opzione");
+    button.innerText = answer;
+
+    button.addEventListener("click", () => {
+      if (answer === domandaCorrente.correct_answer) {
+        punteggio++;
+      }
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        mostraDomande(currentQuestionIndex);
+      } else {
+        votoFinale();
+      }
+    });
+    container.appendChild(button);
+  });
 };
+
+function votoFinale() {
+  domandaElement.innerText = `Quiz finito! Il tuo punteggio è ${punteggio}/${questions.length}.`;
+  container.innerHTML = "";
+}
+
+mostraDomande(currentQuestionIndex);
