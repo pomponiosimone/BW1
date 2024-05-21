@@ -10,11 +10,11 @@
     margin-right: 10px;
     margin-top: 1.5em; 
     margin-bottom: 3em;
+    cursor: pointer;
   }
-  .stella{
-    opacity:1;
+  
     
-  }
+  
 #lastStar{
     margin-right: 0;
 }
@@ -39,7 +39,4 @@ button{
 section > p {
     font-size: large;
     font-weight: 600;
-}
-.starON{
-    filter: brightness(1.5)
 }
