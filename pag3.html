@@ -22,19 +22,21 @@
       <div id="container">
         <div id="correctAnswer" class="answers">
           <h3>Correct</h3>
-          <p class="risultatoPercentuale">66.7%</p>
-          <p>4/6 questions</p>
+          <p class="risultatoPercentualeCorretto"></p>
+          <p id="qCorrect">4/6 questions</p>
         </div>
         <div id="pieChart" class="answers">
           <div id="pieChart">
-            <!-- Qua va inserito il commento: "congratulazioni!"" se hai passato il
-                questionario oppure "Fallito!" se non l'hai passato. -->
+            <svg viewBox="0 0 200 200">
+              <circle cx="100" cy="100" r="100"></circle>
+            </svg>
+            <p></p>
           </div>
         </div>
         <div id="uncorrectAnswer" class="answers">
           <h3>Wrong</h3>
-          <p class="risultatoPercentuale">33.3%</p>
-          <p>2/6 questions</p>
+          <p class="risultatoPercentualeSbagliato"></p>
+          <p id="qUncorrect">2/6 questions</p>
         </div>
       </div>
       <section>
