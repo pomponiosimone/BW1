@@ -103,7 +103,7 @@ const mostraDomande = (questionIndex) => {
   //qui assegno ad una costante la domanda corrente estratta dalla proprietà "questions"
   const domandaCorrente = questions[questionIndex];
   domandaElement.innerText = domandaCorrente.question;
-  //svuoto il container
+  //svuoto il container per a prossima domanda
   container.innerHTML = "";
   //creo una copia dell'array risposte incorrette dell'elemento in oggetto(quello corrente per intederci)
   let risposte = [...domandaCorrente.incorrect_answers];
@@ -123,7 +123,7 @@ const mostraDomande = (questionIndex) => {
     button.innerText = answer;
     //evento click
     button.addEventListener("click", () => {
-      //condizione se la risposta cliccata è corretta allora il punteggio si somma di 1
+      //condizione se la risposta cliccata è corretta allora il punteggio si somma di 1 il suo valore
       if (answer === domandaCorrente.correct_answer) {
         punteggio++;
       }
@@ -147,3 +147,6 @@ function votoFinale() {
 }
 //richiamo la funzione
 mostraDomande(currentQuestionIndex);
+window.onload = (event) => {
+  console.log("page is fully loaded");
+};
