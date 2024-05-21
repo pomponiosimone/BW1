@@ -93,14 +93,36 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-let punteggio = [];
-const domande = () => {
-  const domanda = document.getElementById("domandaRND");
-  const risposta1 = document.getElementById("opzione1");
-  const risposta2 = document.getElementById("opzione2");
-  const risposta3 = document.getElementById("opzione3");
-  const risposta4 = document.getElementById("opzione4");
-  for (let index = 0; index < questions.length; index++) {
-    domanda.innerText = questions[index].question;
-  }
+//creo contenitore punteggio e prendo i riferimenti dall'HTML
+let punteggio = 0;
+const domanda = document.getElementById("domandaRND");
+const container = document.getElementById("container");
+//creo funzione for per le 10 domande all'interno di "questions"
+const mostraDomande = () => {
+  const domanda = questions[questionIndex]; //domanda corrente preso dall'array questions con index della domandaCorrente
+  domanda.innerText = domanda.question; //inserisco la domanda prendendola dalla proprietà all'interno della domanda corrente
+  container.innerHTML = ""; //svuoto la domanda
+  //creo dei bottoni per le risposte
+  let risposte = [...domanda.incorrect_answers]; //creo una copia/contenitore delle risposte sbagliate, questo è necessario per evitare di modificare direttamente l'array incorrect_answers originale, lavorando invece su una copia.
+  risposte.splice(
+    Math.floor(Math.random() * (risposte.length + 1)),
+    0,
+    question.correct_answer
+  ); //qui inserisco la risposta corretta dentro la copia del'array di risposte sbagliate creata precedentemente grazie a splice e contemporaneamente la inserisco in un indice random
+  //Comincio il ciclo di domanda da mostrare nella schermata grazie a forEach
+  risposte.forEach((answer) => {
+    //ricordiamoci che "answers" è l'array creato con risposte errate e quela giusta mentre "answer" è solo un elemento dentro l'array questa può essere errata come sbagliata
+    const button = document.createElement("div");
+    button.classList.add("opzione");
+    button.innerText = answer;
+    container.appendChild(button);
+    button.addEventListener("click", () => {
+      if (risposte === questions.correct_answer) {
+        punteggio++;
+      }
+      domanda.innerText = domanda;
+    });
+  });
 };
+
+mostraDomande();
