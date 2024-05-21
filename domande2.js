@@ -93,38 +93,43 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-//creo contenitore punteggio e prendo i riferimenti dall'HTML
+
 let punteggio = 0;
 const domanda = document.getElementById("domandaRND");
 const container = document.getElementById("container");
-//creo funzione for per le 10 domande all'interno di "questions"
-const mostraDomande = (arrayDomande) => {
-  let domandaCorrente = questions[questionIndex]; //domanda corrente preso dall'array questions con index della domandaCorrente
-  domanda.innerText = domanda.question; //inserisco la domanda prendendola dalla proprietà all'interno della domanda corrente
-  container.innerHTML = ""; //svuoto la domanda
-  //creo dei bottoni per le risposte
-  let risposte = [...domandaCorrente.incorrect_answers];
-  console.log(risposte); //creo una copia/contenitore delle risposte sbagliate, questo è necessario per evitare di modificare direttamente l'array incorrect_answers originale, lavorando invece su una copia.
-  risposte.splice(
-    Math.floor(Math.random() * (risposte.length + 1)),
-    0,
-    question.correct_answer
-  ); //qui inserisco la risposta corretta dentro la copia del'array di risposte sbagliate creata precedentemente grazie a splice e contemporaneamente la inserisco in un indice random
-  //Comincio il ciclo di domanda da mostrare nella schermata grazie a forEach
-  risposte.forEach((answer, index) => {
-    //ricordiamoci che "answers" è l'array creato con risposte errate e quela giusta mentre "answer" è solo un elemento dentro l'array questa può essere errata come sbagliata
-    const button = document.createElement("div");
-    button.classList.add("opzione");
-    button.innerText = answer;
-    container.appendChild(button);
-    button.addEventListener("click", () => {
-      if (risposte === questions.correct_answer) {
-        punteggio++;
+
+const mostraDomande = (array) => {
+  for (let index = 0; index < array.length; index++) {
+    const domandaCorrente = array[index];
+
+    //richiamo titolo domanda
+    domanda.innerText = domandaCorrente.question;
+
+    let currentRightAnswers;
+    let currentWrongAnswers = [];
+    let allCurrentAnswers = [];
+
+    currentRightAnswers = domandaCorrente.correct_answer;
+    currentWrongAnswers = [...domandaCorrente.incorrect_answers];
+
+    allCurrentAnswers.push(currentRightAnswers);
+    allCurrentAnswers.push(...currentWrongAnswers);
+    console.log(allCurrentAnswers);
+
+    const randomPosition = () => {
+      // Iteriamo sull'array partendo dall'ultimo elemento
+      for (let index = array.length - 1; index > 0; index--) {
+        // Generiamo un indice casuale compreso tra 0 e l'indice corrente (incluso)
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        // Scambiamo l'elemento corrente con l'elemento ad un indice casuale
+        // Utilizziamo la sintassi ES6 per lo scambio di valori tra variabili senza l'uso di una variabile temporanea
+        [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
       }
-      domandaCorrente++;
-      domanda.innerText = domandaCorrente.question;
-    });
-  });
+      // Restituiamo l'array mescolato
+      return array;
+    };
+    const button = document.createElement("div");
+  }
 };
 
 mostraDomande(questions);

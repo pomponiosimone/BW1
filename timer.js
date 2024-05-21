@@ -21,6 +21,7 @@ const timer = (duration) => {
     //aggiorno il valore nel DOM
     timerElement.textContent = timeLeft;
 
+    //
     const offset = circumference - (timeLeft / duration) * circumference;
     circle.style.strokeDashoffset = offset;
 
@@ -32,8 +33,6 @@ const timer = (duration) => {
 
   //altrimenti richiama la funzione la fuznione 'updateTimer' ogni secondo
   const timerInterval = setInterval(updateTimer, 1000);
-
-  const setCircleDashArray = () => {};
 };
 
 timer(60);
