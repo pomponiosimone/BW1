@@ -4,7 +4,11 @@ const timer = (duration) => {
   let timeLeft = duration;
 
   //ottengo l'elemento del DOM dove verrà mostrato il timer
-  const timerElement = document.getElementById("Changesecond");
+  const timerElement = document.getElementById("secondsRemaining");
+  //ottengo l'elemento del cerchio dal DOM
+  const circle = document.getElementById("ss");
+  const radius = ss.r.baseVal.value;
+  const circumference = 2 * Math.PI * radius;
 
   //gli assegno come contenuto il timer
   timerElement.textContent = timeLeft;
@@ -17,6 +21,9 @@ const timer = (duration) => {
     //aggiorno il valore nel DOM
     timerElement.textContent = timeLeft;
 
+    const offset = circumference - (timeLeft / duration) * circumference;
+    circle.style.strokeDashoffset = offset;
+
     //quando il tempo arriva a 0 si ferma il timer
     if (timeLeft <= 0) {
       clearInterval(timerInterval);
@@ -25,6 +32,8 @@ const timer = (duration) => {
 
   //altrimenti richiama la funzione la fuznione 'updateTimer' ogni secondo
   const timerInterval = setInterval(updateTimer, 1000);
+
+  const setCircleDashArray = () => {};
 };
 
 timer(60);
