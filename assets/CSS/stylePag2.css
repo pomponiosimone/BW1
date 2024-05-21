@@ -12,9 +12,10 @@ text-align:center;
   display: block;
   margin: auto;
 
-  width: 800px;
+  width: 1000px;
   height: 150px;
   text-align: center;
+ 
 }
 #opzione1 {
   display: inline-block;
