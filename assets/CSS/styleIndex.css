@@ -1,3 +1,7 @@
+body {
+  margin-right: 8em;
+}
+
 #logoImage {
   margin-top: 2em;
   margin-left: 6em;
@@ -6,7 +10,6 @@
 #testo1 {
   text-align: justify;
   margin-left: 6em;
-  margin-right: 15em;
 }
 
 #testo2 {
@@ -44,28 +47,39 @@ p {
   line-height: 1em;
 }
 
-.glowButton {
-  float: right;
-  margin-right: 10em;
-  height: 3em;
-  width: 9em;
-}
-
 .condizione {
   text-align: justify;
   margin-left: 6em;
   margin-bottom: 6em;
 }
 
-/* .customCheckbox input {
-  display: none;
-} */
-
-/* .checkmark {
-  width: 10px;
-  height: 10px;
-  border: 1px solid white;
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
   background-color: transparent;
+  cursor: pointer;
   position: relative;
-  margin-right: 10px;
-} */
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  background-color: #00ffff;
+}
+
+input[type="checkbox"]:hover {
+  border-color: #555;
+}
+
+.glowButton {
+  float: inline-end;
+  height: 3em;
+  width: 9em;
+}
