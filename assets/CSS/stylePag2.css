@@ -178,7 +178,7 @@ margin:auto
   text-align:center;
   font-weight: 500;
   z-index: 1000;
-   font-size:2em;
+   font-size:2.1em;
   color: white;
  padding:1px;
  line-height:30px;
@@ -186,12 +186,12 @@ margin:auto
  #time div span {
   position:absolute;
   transform: translate(-50%) translateY(-50%);
-  font-size: 0.23em;
+  font-size: 0.18em;
   text-align: center;
   font-weight:500;
 
   color: white;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial Narrow, sans-serif
  
  }
  .secondsRemaining { display:inline-block;
