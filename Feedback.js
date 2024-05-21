@@ -1,10 +1,4 @@
-/* const stars = document.getElementsByClassName("star");
-stars.forEach((star) => {
-  star.addEventListener("mouseover", handleMouseOver);
-  star.addEventListener("mouseout", handleMouseOut);
-  star.addEventListener("click", handleClick);
-});
-const handleMouseOver = () => {}; */
+//Creazione 10 stelle con fill scuro
 const rating = document.getElementById("rating");
 for (let index = 0; index < 10; index++) {
   const star = document.createElement("li");
@@ -26,3 +20,49 @@ for (let index = 0; index < 10; index++) {
   star.appendChild(svg);
   rating.appendChild(star);
 }
+//ottengo un array da un elemento htmlCollector
+const stars = Array.from(document.getElementsByClassName("star"));
+//variabile per tenere traccia della stella cliccata
+let clickedIndex = -1;
+//mouse sopra le stelle
+function handleMouseOver(index) {
+  stars.forEach((star, i) => {
+    const path = star.querySelector("path");
+    if (i <= index) {
+      path.setAttribute("fill", "#00FFFF");
+    } else {
+      path.setAttribute("fill", "#1A104C");
+    }
+  });
+}
+//mouse fuori stella
+function handleMouseOut() {
+  stars.forEach((star, i) => {
+    const path = star.querySelector("path");
+    if (i > clickedIndex) {
+      path.setAttribute("fill", "#1A104C");
+    }
+  });
+}
+//evento click
+function handleClick(index) {
+  clickedIndex = index;
+  stars.forEach((star, i) => {
+    const path = star.querySelector("path");
+    if (i <= index) {
+      path.setAttribute("fill", "#00FFFF");
+    } else {
+      path.setAttribute("fill", "#1A104C");
+    }
+  });
+}
+//creazione evento interattivo sull'illuminazione della stella
+stars.forEach((star, index) => {
+  star.addEventListener("mouseover", () => handleMouseOver(index));
+  star.addEventListener("mouseout", handleMouseOut);
+  star.addEventListener("click", () => handleClick(index));
+});
+
+window.onload = (event) => {
+  console.log("page is fully loaded");
+};
