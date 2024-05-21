@@ -32,11 +32,13 @@
     0px 5px 0px 0px rgba(0, 0, 0, 0.15);
 }
 #numberQuestion {
-  display: block;
-  margin: auto;
+  display: inline-block;
 
-  width: 400px;
+margin-left:40%;
+  width: 300px;
   height: 30px;
+ align-items: center;
+ line-height: 1.4px;
 }
 
 #question {
@@ -63,16 +65,15 @@
 }
 #time .circle {
   position: relative;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 90%;
-
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 25);
-}
+ width: 150px;
+ height: 150px;
+ display:flex;
+ justify-content: center;
+ align-items: center;
+ margin-left: 80%;
+ 
+ border-radius: 50%;
+ box-shadow: 0 0 10px rgba(0,0,0,25) }
 
 #time .circle::before {
   content: "";
@@ -123,10 +124,19 @@
   font-weight: 500;
 
   color: white;
-  font-family: Arial Narrow, sans-serif;
-}
-.secondsRemaining {
-  display: inline-block;
-  padding: 1px;
-  line-height: 0px;
+  font-family: Arial Narrow, sans-serif
+ 
+ }
+ .secondsRemaining { display:inline-block;
+  padding:1px;
+line-height:0px
+
+ }
+
+#numberQ {
+  color:white;
+font-size: 1.3em;
+margin-left:80%;
+line-height: 0px;
+
 }
