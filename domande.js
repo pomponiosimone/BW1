@@ -93,46 +93,57 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+//creo una variabile per il punteggio e un index per gli oggetti delle domande
 let punteggio = 0;
 let currentQuestionIndex = 0;
 const domandaElement = document.getElementById("domandaRND");
 const container = document.getElementById("container");
-
+//creo una funzione che mostri le domande
 const mostraDomande = (questionIndex) => {
+  //qui assegno ad una costante la domanda corrente estratta dalla proprietà "questions"
   const domandaCorrente = questions[questionIndex];
   domandaElement.innerText = domandaCorrente.question;
+  //svuoto il container
   container.innerHTML = "";
-
+  //creo una copia dell'array risposte incorrette dell'elemento in oggetto(quello corrente per intederci)
   let risposte = [...domandaCorrente.incorrect_answers];
+  //prendo l'array appena creato e grazie ad splice inserisco dentro la risposta corretta non prima di assegnargli un indice casuale a seconda della lunghezza dell'array risposte
   risposte.splice(
     Math.floor(Math.random() * (risposte.length + 1)),
     0,
     domandaCorrente.correct_answer
   );
-
+  //creo un loop con forEach che ha come parametro "answer" non è altro che le risposte in generale siano esse giuste o sbagliate, non faccio altro che creare un "button"
+  //non è altro che un div con un evento "click"
   risposte.forEach((answer) => {
     const button = document.createElement("div");
+    //assegno una classe
     button.classList.add("opzione");
+    //inserisco una delle risposte in oggetto dentro questo div chiamato button
     button.innerText = answer;
-
+    //evento click
     button.addEventListener("click", () => {
+      //condizione se la risposta cliccata è corretta allora il punteggio si somma di 1
       if (answer === domandaCorrente.correct_answer) {
         punteggio++;
       }
+      //aumento anche l'indice currentQuestion per prendere il secondo oggetto dentro l'array questions, tale indice è stato creato a inizio funzione.
       currentQuestionIndex++;
+      //condizione in cui se l'indice delle domande è inferiore a quello degli oggetti contenuti dento l'array continua a ripetere la funzione altrimenti passa al voto finale
       if (currentQuestionIndex < questions.length) {
         mostraDomande(currentQuestionIndex);
       } else {
         votoFinale();
       }
     });
+    //incollo il div creato in quello esistente su HTML
     container.appendChild(button);
   });
 };
-
+//funzione di voto finale, dovrebbe collegarsi al grafico a torta fatto da uno di voi (penso Brian)
 function votoFinale() {
   domandaElement.innerText = `Quiz finito! Il tuo punteggio è ${punteggio}/${questions.length}.`;
   container.innerHTML = "";
 }
-
+//richiamo la funzione
 mostraDomande(currentQuestionIndex);
