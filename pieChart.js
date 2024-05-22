@@ -28,7 +28,6 @@ function createPieChart(punteggio, questions) {
       innerRadius * Math.cos(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
     const iy1 =
       innerRadius * Math.sin(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
-
     const ix2 = innerRadius * Math.cos((angoloIniziale * Math.PI) / 180);
     const iy2 = innerRadius * Math.sin((angoloIniziale * Math.PI) / 180);
 
@@ -40,7 +39,7 @@ function createPieChart(punteggio, questions) {
         A ${innerRadius} ${innerRadius} 0 ${arc} 0 ${150 + ix1} ${150 + iy1}
         Z
       `;
-    // `M 150 150 L ${150 + x1} ${150 + y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${150 + x2} ${150 + y2} Z`;
+
     //creamo un nuovo elemento "path" per il segmento
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     //impostiamo l'attributo "d" con la stringa "pathData" e l'attributo "fill" con il colore corrispondente
@@ -64,9 +63,28 @@ function createPieChart(punteggio, questions) {
   circle.setAttribute("fill", "transparent");
 
   svg.appendChild(circle);
+
+  //aggiungiamo un testo al centro del grafico
+  //se il voto è maggiore a 6 stampa "congratulazioni", altrimenti stampa "hai fallito"
+  const text = punteggio >= 6 ? "Congratulations!" : "You Failed!";
+
+  const textElement = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "text"
+  );
+  textElement.setAttribute("x", "150");
+  textElement.setAttribute("y", "150");
+  textElement.setAttribute("text-anchor", "middle");
+  textElement.setAttribute("dy", ".3em");
+  textElement.setAttribute("font-size", "20");
+  textElement.setAttribute("font-family", "Arial");
+  textElement.setAttribute("fill", "white");
+  textElement.textContent = text;
+
+  svg.appendChild(textElement);
 }
 
-const punteggio = 7;
+const punteggio = 10;
 const questions = 10;
 
 createPieChart(punteggio, questions);
