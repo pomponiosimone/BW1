@@ -1,3 +1,8 @@
-document.getElementsByName("glowButton").addEventListener("click", function () {
-  window.location.href = "Pagina2.html";
-});
+document
+  .getElemqueentById("proceedButton")
+  .addEventListener("click", function (event) {
+    const checkbox = document.getElementById("condition");
+    if (checkbox.checked) {
+      window.location.href = "pagina2.html";
+    }
+  });
