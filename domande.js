@@ -155,6 +155,7 @@ function votoFinale() {
 
   // Creo il bottone che manda alla pagina del feedback
   const daiUnFeedback = () => {
+    const footer = document.querySelector("footer");
     const containerButton = document.createElement("div");
     containerButton.classList.add("containerButton");
     const button = document.createElement("button");
@@ -164,6 +165,7 @@ function votoFinale() {
       window.location.href = "Feedback.html";
     });
     containerButton.appendChild(button);
+    footer.appendChild(containerButton);
   };
   daiUnFeedback();
 
