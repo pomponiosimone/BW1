@@ -1,11 +1,10 @@
-
-.body{
-text-align:center;
+.body {
+  text-align: center;
 }
 #container {
   width: 1300px;
   height: 300px;
-  margin:auto;
+  margin: auto;
 }
 
 #domanda {
@@ -15,10 +14,10 @@ text-align:center;
   width: 1300px;
   height: 180px;
   text-align: center;
- 
 }
 .opzione {
   display: inline-block;
+  cursor: pointer;
   border: 4px solid white;
   width: 30%;
   height: 10%;
@@ -29,126 +28,116 @@ text-align:center;
   border-radius: 40px;
   text-align: center;
   padding-top: 30px;
-  box-shadow:
- 0px 0px 0px 1px #4e8381 inset,
- 0px 0px 0px 2px #74b6b4 inset,
- 0px 4px 0px 0px #4a7c7b,
- 0px 5px 0px 0px #355655,
- 0px 5px 0px 0px rgba(0,0,0,.15);
- 
+  box-shadow: 0px 0px 0px 1px #4e8381 inset, 0px 0px 0px 2px #74b6b4 inset,
+    0px 4px 0px 0px #4a7c7b, 0px 5px 0px 0px #355655,
+    0px 5px 0px 0px rgba(0, 0, 0, 0.15);
 }
 #numberQuestion {
   display: inline-block;
-margin-top: 10px;
-margin-left:41%;
+  margin-top: 10px;
+  margin-left: 41%;
   width: 300px;
   height: 30px;
- align-items: center;
- line-height: 1.1px;
- 
+  align-items: center;
+  line-height: 1.1px;
 }
-
 
 #question {
   color: white;
   font-size: 1.3em;
-text-align: center;
+  text-align: center;
 }
- #second {
-font-size:1.1em;
-color: white;
-padding:0;
-margin:auto
- }
- #Changesecond {
-    display: inline-block;
-    font-size:3.5em;
-    padding-top:8px;
- }
+#second {
+  font-size: 1.1em;
+  color: white;
+  padding: 0;
+  margin: auto;
+}
+#Changesecond {
+  display: inline-block;
+  font-size: 3.5em;
+  padding-top: 8px;
+}
 
- #time {
-  display:flex;
+#time {
+  display: flex;
   gap: 30px;
-  margin:auto;
- }
- #time .circle {
+  margin: auto;
+}
+#time .circle {
   position: relative;
- width: 150px;
- height: 150px;
- display:flex;
- justify-content: center;
- align-items: center;
- margin-left: 80%;
-border-radius: 50%;
- box-shadow: 0 0 10px rgba(0,0,0,25) }
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 25);
+}
 
 #time .circle::before {
-  content: '';
-  position:absolute;
-  inset: 0;
- 
-
- }
- #time .circle::after {
-  content:'';
+  content: "";
   position: absolute;
-  width:100px;
-  height:100px;
-  box-shadow: inset 0 5px 10px rgba(0,0,0,0.25),
-0 10px 10px rgba(0,0,0,0.75)
- 0 -2px 2px rgba(255,255,255,0.5)
- inset 0 4px 2px rgba(0,0,0,0.25)
- inset 0 -2px 2px rgba(255,255,255,0.5);}
+  inset: 0;
+}
+#time .circle::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.75) 0 -2px 2px rgba(255, 255, 255, 0.5) inset 0 4px
+      2px rgba(0, 0, 0, 0.25) inset 0 -2px 2px rgba(255, 255, 255, 0.5);
+}
 
- #time .circle svg {
+#time .circle svg {
   position: relative;
   width: 150px;
   height: 150px;
   transform: rotate(270deg);
- }
- #time .circle svg circle {
-  width:100%;
-  height:100%;
-  fill:transparent;
+}
+#time .circle svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
   stroke-width: 10;
-        stroke: #03fcf8;
+  stroke: #03fcf8;
   stroke-linecap: round;
-  transform: translate(5px,5px);
-  stroke-dasharray:440;
-
- }
- #time div {
+  transform: translate(5px, 5px);
+  stroke-dasharray: 440;
+}
+#time div {
   position: absolute;
-  text-align:center;
+  text-align: center;
   font-weight: 500;
   z-index: 1000;
-   font-size:2.1em;
+  font-size: 2.1em;
   color: white;
- padding:1px;
- line-height:30px;
- }
- #time div span {
-  position:absolute;
+  padding: 1px;
+  line-height: 30px;
+}
+#time div span {
+  position: absolute;
   transform: translate(-50%) translateY(-50%);
   font-size: 0.18em;
   text-align: center;
-  font-weight:500;
+  font-weight: 500;
 
   color: white;
-  font-family: Arial Narrow, sans-serif
- 
- }
- .secondsRemaining { display:inline-block;
-  padding:1px;
-line-height:0px
-
- }
+  font-family: Arial Narrow, sans-serif;
+}
+.secondsRemaining {
+  display: inline-block;
+  padding: 1px;
+  line-height: 0px;
+}
 
 #numberQ {
-  color:white;
-font-size: 1.3em;
-margin-left:74%;
-line-height: 0px;
+  color: white;
+  font-size: 1.3em;
+  margin-left: 74%;
+  line-height: 0px;
 }
 /* CSS per il block di Brian */
 .risposte {
@@ -158,23 +147,23 @@ line-height: 0px;
   line-height: 0;
 }
 
-.rightwrong{
+.rightwrong {
   font-size: 40px;
 }
 
 .risultatoPercentuale {
-    font-size: 40px;
-    height: 50px;
-    font-weight: 800;
-    /* padding: 20px 0; */
-  }
+  font-size: 40px;
+  height: 50px;
+  font-weight: 800;
+  /* padding: 20px 0; */
+}
 
-.torta{
-    display: inline-block;
-  }
-#numberQ2{
-color:#FF00FF;
-font-size: 1.3em;
-margin-left:83%;
-line-height: 0px;
+.torta {
+  display: inline-block;
+}
+#numberQ2 {
+  color: #ff00ff;
+  font-size: 1.3em;
+  margin-left: 83%;
+  line-height: 0px;
 }
