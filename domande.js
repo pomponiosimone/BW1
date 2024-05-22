@@ -152,6 +152,21 @@ function votoFinale() {
   timer.setAttribute("style", "display:none");
   const numberQuestion = document.getElementById("numberQuestion");
   numberQuestion.setAttribute("style", "display:none");
+
+  // Creo il bottone che manda alla pagina del feedback
+  const daiUnFeedback = () => {
+    const containerButton = document.createElement("div");
+    containerButton.classList.add("containerButton");
+    const button = document.createElement("button");
+    button.innerText = "Rate Us";
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.location.href = "Feedback.html";
+    });
+    containerButton.appendChild(button);
+  };
+  daiUnFeedback();
+
   domandaElement.innerText = "Result";
   container.innerHTML = "";
   const h4 = document.createElement("h4");
