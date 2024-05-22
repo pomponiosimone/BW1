@@ -15,7 +15,9 @@ function createPieChart(correct, sbagliato) {
     const y2 = radius * Math.sin((angolo * Math.PI) / 180);
     const arc = halfAngle > 180 ? 1 : 0;
 
-    const pathData = `M 150 150 L ${150 + x1} ${150 + y1} A ${radius} ${radius} 0 ${arc} 1 ${150 + x2} ${150 + y2} Z`;
+    const pathData = `M 150 150 L ${150 + x1} ${
+      150 + y1
+    } A ${radius} ${radius} 0 ${arc} 1 ${150 + x2} ${150 + y2} Z`;
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", pathData);
     path.setAttribute("fill", colori[i]);
