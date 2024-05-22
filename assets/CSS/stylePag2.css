@@ -147,7 +147,12 @@ line-height:0px
 #numberQ {
   color:white;
 font-size: 1.3em;
-margin-left:79%;
+margin-left:74%;
 line-height: 0px;
 }
-
+#numberQ2{
+color:#FF00FF;
+font-size: 1.3em;
+margin-left:83%;
+line-height: 0px;
+}
