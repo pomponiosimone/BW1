@@ -98,6 +98,7 @@ let punteggio = 0;
 let currentQuestionIndex = 0;
 const domandaElement = document.getElementById("domandaRND");
 const container = document.getElementById("container");
+
 //creo una funzione che mostri le domande
 const mostraDomande = (questionIndex) => {
   //qui assegno ad una costante la domanda corrente estratta dalla proprietà "questions"
@@ -113,6 +114,7 @@ const mostraDomande = (questionIndex) => {
     0,
     domandaCorrente.correct_answer
   );
+
   //creo un loop con forEach che ha come parametro "answer" non è altro che le risposte in generale siano esse giuste o sbagliate, non faccio altro che creare un "button"
   //non è altro che un div con un evento "click"
   risposte.forEach((answer) => {
@@ -141,13 +143,56 @@ const mostraDomande = (questionIndex) => {
     container.appendChild(button);
   });
 };
+
 //funzione di voto finale, dovrebbe collegarsi al grafico a torta fatto da uno di voi (penso Brian)
 function votoFinale() {
   const timer = document.getElementById("time");
   timer.setAttribute("style", "display:none");
   domandaElement.innerText = "Result";
-  const h4 = document.querySelector("h4");
-  h4.innerText = "The summer of your answer:";
+  container.innerHTML = "";
+  const h4 = document.createElement("h4");
+  h4.innerText = "The summer of your answer: ";
+  domandaElement.appendChild(h4);
+
+  //creo 3 div da appendere poi a Container
+
+  const divCorrect = document.createElement("div");
+  divCorrect.classList.add("risposte");
+  const divTorta = document.createElement("div");
+  divTorta.classList.add("risposte");
+  const divUncorrect = document.createElement("div");
+  divUncorrect.classList.add("risposte");
+
+  ////div Correct/I paragrafi del div1
+  const p1 = document.createElement("p");
+  p1.innerText = "Correct";
+  p1.classList.add("rightWrong");
+  const p2 = document.createElement("p");
+  p2.innerText = `${(punteggio / 10) * 100}%`;
+  p2.classList.add("risultatoPercentuale");
+  const p3 = document.createElement("p");
+  p3.innerText = `${punteggio}/${questions.length}`;
+  divCorrect.appendChild(p1);
+  divCorrect.appendChild(p2);
+  divCorrect.appendChild(p3);
+  container.appendChild(divCorrect);
+
+  //div torta
+  container.appendChild(divTorta);
+
+  //div Uncorrect
+  const p4 = document.createElement("p");
+  p4.innerText = "Uncorrect";
+  p4.classList.add("rightWrong");
+  const p5 = document.createElement("p");
+  p5.innerText = `${((questions.length - punteggio) / 10) * 100}%`;
+  p5.classList.add("risultatoPercentuale");
+  const p6 = document.createElement("p");
+  p6.innerText = `${questions.length - punteggio}/${questions.length}`;
+  divUncorrect.appendChild(p4);
+  divUncorrect.appendChild(p5);
+  divUncorrect.appendChild(p6);
+  container.appendChild(divUncorrect);
 }
 //richiamo la funzione
 mostraDomande(currentQuestionIndex);
