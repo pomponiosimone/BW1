@@ -135,7 +135,6 @@ const mostraDomande = (questionIndex) => {
         timer(60);
       } else {
         votoFinale();
-        clearInterval(currentTimerInterval);
       }
     });
     //incollo il div creato in quello esistente su HTML
@@ -144,8 +143,11 @@ const mostraDomande = (questionIndex) => {
 };
 //funzione di voto finale, dovrebbe collegarsi al grafico a torta fatto da uno di voi (penso Brian)
 function votoFinale() {
-  domandaElement.innerText = `Quiz finito! Il tuo punteggio è ${punteggio}/${questions.length}.`;
-  container.innerHTML = "";
+  const timer = document.getElementById("time");
+  timer.setAttribute("style", "display:none");
+  domandaElement.innerText = "Result";
+  const h4 = document.querySelector("h4");
+  h4.innerText = "The summer of your answer:";
 }
 //richiamo la funzione
 mostraDomande(currentQuestionIndex);
