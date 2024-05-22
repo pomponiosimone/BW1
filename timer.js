@@ -59,5 +59,4 @@ const timer = (duration) => {
   currentTimerInterval = setInterval(updateTimer, 1000);
 };
 
-timer(60);
 // Richiama il timer dopo qualche secondo per vedere l'effetto della cancellazione del precedente
