@@ -3,17 +3,17 @@
 text-align:center;
 }
 #container {
-  width: 1200px;
-  height: 450px;
-  margin: auto;
+  width: 1300px;
+  height: 300px;
+  margin:auto;
 }
 
 #domanda {
   display: block;
   margin: auto;
 
-  width: 1000px;
-  height: 150px;
+  width: 1300px;
+  height: 180px;
   text-align: center;
  
 }
@@ -39,13 +39,15 @@ text-align:center;
 }
 #numberQuestion {
   display: inline-block;
-
-margin-left:40%;
+margin-top: 10px;
+margin-left:41%;
   width: 300px;
   height: 30px;
  align-items: center;
- line-height: 1.4px;
+ line-height: 1.1px;
+ 
 }
+
 
 #question {
   color: white;
@@ -67,7 +69,7 @@ margin:auto
  #time {
   display:flex;
   gap: 30px;
-  margin: auto;
+  margin:auto;
  }
  #time .circle {
   position: relative;
@@ -77,8 +79,7 @@ margin:auto
  justify-content: center;
  align-items: center;
  margin-left: 80%;
- 
- border-radius: 50%;
+border-radius: 50%;
  box-shadow: 0 0 10px rgba(0,0,0,25) }
 
 #time .circle::before {
@@ -146,9 +147,36 @@ line-height:0px
 #numberQ {
   color:white;
 font-size: 1.3em;
-margin-left:80%;
+margin-left:74%;
 line-height: 0px;
+}
+/* CSS per il block di Brian */
+.risposte {
+  display: inline-block;
+  width: 250px;
+  /* height: 200px; */
+  line-height: 0;
+}
 
+.rightwrong{
+  font-size: 40px;
+}
+
+.risultatoPercentuale {
+    font-size: 40px;
+    height: 50px;
+    font-weight: 800;
+    /* padding: 20px 0; */
+  }
+
+.torta{
+    display: inline-block;
+  }
+#numberQ2{
+color:#FF00FF;
+font-size: 1.3em;
+margin-left:83%;
+line-height: 0px;
 }
 /* CSS per il block di Brian */
 .risposte {
