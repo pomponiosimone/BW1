@@ -15,12 +15,18 @@
   height: 180px;
   text-align: center;
 }
+.opzione:hover {
+  background-color: #FF00FF;
+
+}
 .opzione {
   display: inline-block;
   border: 4px solid white;
   width: 30%;
   height: 10%;
-
+line-height: 1.5px;
+font-family: Arial, Verdana, sans-serif;
+font-weight: bold;
   margin-left: 120px;
   margin-top: 40px;
   margin-right: 80px;
@@ -30,6 +36,13 @@
   box-shadow: 0px 0px 0px 1px #4e8381 inset, 0px 0px 0px 2px #74b6b4 inset,
     0px 4px 0px 0px #4a7c7b, 0px 5px 0px 0px #355655,
     0px 5px 0px 0px rgba(0, 0, 0, 0.15);
+  box-shadow:
+ 0px 0px 0px 1px #262929 inset,
+ 0px 0px 0px 2px #272727 inset,
+ 0px 4px 0px 0px #1f2020,
+ 0px 5px 0px 0px #252929,
+ 0px 5px 0px 0px rgba(0,0,0,.15);
+ 
 }
 #numberQuestion {
   display: inline-block;
@@ -86,8 +99,10 @@
   width: 100px;
   height: 100px;
   box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.75) 0 -2px 2px rgba(255, 255, 255, 0.5) inset 0 4px
-      2px rgba(0, 0, 0, 0.25) inset 0 -2px 2px rgba(255, 255, 255, 0.5);
+    0 10px 10px rgba(0, 0, 0, 0.75)
+     0 -2px 2px rgba(255, 255, 255, 0.5)
+      inset 0 4px 2px rgba(0, 0, 0, 0.25) 
+      inset 0 -2px 2px rgba(255, 255, 255, 0.5);
 }
 
 #time .circle svg {
@@ -138,16 +153,16 @@
   margin-left: 74%;
   line-height: 0px;
 }
-/* CSS per il block di Brian */
+
 .risposte {
   display: inline-block;
   width: 250px;
-  /* height: 200px; */
-  line-height: 0;
+  line-height: 0
+
 }
 
 .rightwrong {
-  font-size: 40px;
+  font-size: xx-large
 }
 
 .risultatoPercentuale {
@@ -178,11 +193,10 @@
   cursor: pointer;
   border-radius: 1px;
   border: 2px solid white;
+  
 }
 .containerButton {
+ 
   display: inline;
   margin: 10px 35%;
-}
-.containerButton button:hover {
-  background-color: rgba(137, 43, 226, 0.261);
 }

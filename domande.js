@@ -154,12 +154,13 @@ function votoFinale() {
   numberQuestion.setAttribute("style", "display:none");
 
   // Creo il bottone che manda alla pagina del feedback
+
+  const footer = document.querySelector("footer");
+  const containerButton = document.createElement("div");
+  containerButton.classList.add("containerButton");
+  const button = document.createElement("button");
+  button.innerText = "Rate Us";
   const daiUnFeedback = () => {
-    const footer = document.querySelector("footer");
-    const containerButton = document.createElement("div");
-    containerButton.classList.add("containerButton");
-    const button = document.createElement("button");
-    button.innerText = "Rate Us";
     button.addEventListener("click", (event) => {
       event.preventDefault();
       window.location.href = "Feedback.html";
@@ -200,6 +201,15 @@ function votoFinale() {
 
   //div torta
   container.appendChild(divTorta);
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("width", "300");
+  svg.setAttribute("height", "300");
+  svg.setAttribute("viewBox", "0 0 300 300");
+  svg.setAttribute("id", "pieChart");
+  divTorta.appendChild(svg);
+  //torta
+  createPieChart(punteggio, questions.length);
 
   //div Uncorrect
   const p4 = document.createElement("p");
