@@ -123,6 +123,7 @@ const mostraDomande = (questionIndex) => {
     button.classList.add("opzione");
     //inserisco una delle risposte in oggetto dentro questo div chiamato button
     button.innerText = answer;
+
     //evento click
     button.addEventListener("click", () => {
       //condizione se la risposta cliccata è corretta allora il punteggio si somma di 1 il suo valore
@@ -131,6 +132,7 @@ const mostraDomande = (questionIndex) => {
       }
       //aumento anche l'indice currentQuestion per prendere il secondo oggetto dentro l'array questions, tale indice è stato creato a inizio funzione.
       currentQuestionIndex++;
+
       //condizione in cui se l'indice delle domande è inferiore a quello degli oggetti contenuti dento l'array continua a ripetere la funzione altrimenti passa al voto finale
       if (currentQuestionIndex < questions.length) {
         mostraDomande(currentQuestionIndex);
@@ -148,6 +150,8 @@ const mostraDomande = (questionIndex) => {
 function votoFinale() {
   const timer = document.getElementById("time");
   timer.setAttribute("style", "display:none");
+  const numberQuestion = document.getElementById("numberQuestion");
+  numberQuestion.setAttribute("style", "display:none");
   domandaElement.innerText = "Result";
   container.innerHTML = "";
   const h4 = document.createElement("h4");
