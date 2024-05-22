@@ -1,7 +1,7 @@
 function createPieChart(punteggio, questions) {
   const risposteSbagliate = questions - punteggio;
-  const data = [punteggio, risposteSbagliate]; //dati del grafico (risposte giuste e sbagliate)
-  const colors = ["#00ffff", "#d20094"];
+  const data = [risposteSbagliate, punteggio]; //dati del grafico (risposte giuste e sbagliate)
+  const colors = ["#d20094", "#00ffff"];
 
   const totale = data.reduce((sum, val) => sum + val, 0); //somma totalee dei valori
   let angoloIniziale = -90; //angolo iniziale per il primo segmento
