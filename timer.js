@@ -39,6 +39,13 @@ const timer = (duration) => {
     // Quando il tempo arriva a 0 si ferma il timer
     if (timeLeft <= 0) {
       clearInterval(currentTimerInterval);
+      //incremento l'indice nella funzione delle domande
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        mostraDomande(currentQuestionIndex);
+        // Avvia il timer per la nuova domanda
+        timer(60); // Imposta la durata del timer per la nuova domanda
+      }
     }
   };
 
