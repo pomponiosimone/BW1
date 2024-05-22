@@ -24,18 +24,15 @@ function createPieChart(punteggio, questions) {
     //dobbiamo determinare se l'angolo del segmento è maggiore di 180 gradi
     const arc = sliceAngolo > 180 ? 1 : 0;
 
-    const ix1 = innerRadius * Math.cos(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
-    const iy1 = innerRadius * Math.sin(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
+    const ix1 =
+      innerRadius * Math.cos(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
+    const iy1 =
+      innerRadius * Math.sin(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
 
     const ix2 = innerRadius * Math.cos((angoloIniziale * Math.PI) / 180);
     const iy2 = innerRadius * Math.sin((angoloIniziale * Math.PI) / 180);
 
     //stringa per disegnare il segmento (path data)
-<<<<<<< HEAD
-    const pathData = `M 150 150 L ${150 + x1} ${
-      150 + y1
-    } A ${radius} ${radius} 0 ${arc} 1 ${150 + x2} ${150 + y2} Z`;
-=======
     const pathData = `
         M ${150 + x1} ${150 + y1}
         A ${radius} ${radius} 0 ${arc} 1 ${150 + x2} ${150 + y2}
@@ -44,7 +41,6 @@ function createPieChart(punteggio, questions) {
         Z
       `;
     // `M 150 150 L ${150 + x1} ${150 + y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${150 + x2} ${150 + y2} Z`;
->>>>>>> Develop-John
     //creamo un nuovo elemento "path" per il segmento
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     //impostiamo l'attributo "d" con la stringa "pathData" e l'attributo "fill" con il colore corrispondente
@@ -56,7 +52,10 @@ function createPieChart(punteggio, questions) {
   });
 
   //aggungiamo un cerchio trasparente al centro del grafico
-  const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+  const circle = document.createElementNS(
+    "http://www.w3.org/2000/svg",
+    "circle"
+  );
   //impostiamo le coordinate del centro e il raggio
   circle.setAttribute("cx", "150");
   circle.setAttribute("cy", "150");
