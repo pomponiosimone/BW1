@@ -46,7 +46,7 @@ function handleMouseOut() {
     const path = star.querySelector("path");
     if (i > clickedIndex) {
       path.setAttribute("fill", "#1A104C");
-    } else if (i < clickedIndex) {
+    } else if (i <= clickedIndex) {
       path.setAttribute("fill", "#00FFFF");
     }
   });
