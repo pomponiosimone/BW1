@@ -152,6 +152,24 @@ function votoFinale() {
   timer.setAttribute("style", "display:none");
   const numberQuestion = document.getElementById("numberQuestion");
   numberQuestion.setAttribute("style", "display:none");
+
+  // Creo il bottone che manda alla pagina del feedback
+
+  const footer = document.querySelector("footer");
+  const containerButton = document.createElement("div");
+  containerButton.classList.add("containerButton");
+  const button = document.createElement("button");
+  button.innerText = "Rate Us";
+  const daiUnFeedback = () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.location.href = "Feedback.html";
+    });
+    containerButton.appendChild(button);
+    footer.appendChild(containerButton);
+  };
+  daiUnFeedback();
+
   domandaElement.innerText = "Result";
   container.innerHTML = "";
   const h4 = document.createElement("h4");
@@ -183,6 +201,15 @@ function votoFinale() {
 
   //div torta
   container.appendChild(divTorta);
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("width", "300");
+  svg.setAttribute("height", "300");
+  svg.setAttribute("viewBox", "0 0 300 300");
+  svg.setAttribute("id", "pieChart");
+  divTorta.appendChild(svg);
+  //torta
+  createPieChart(punteggio, questions.length);
 
   //div Uncorrect
   const p4 = document.createElement("p");
