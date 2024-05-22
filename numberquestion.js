@@ -11,15 +11,3 @@ document.addEventListener('click', function(event) {
         changeNumberQ();
     }
 });
-
-
-
-const secondsElements = document.querySelector("p");
-
-if (secondsElements.textContent = 0) {changeNumberQ()}
-    
-setInterval(function() {
-    if (parseInt(secondsElements.textContent) === 0) {
-        changeNumberQ();
-    }
-}, 1000); 
