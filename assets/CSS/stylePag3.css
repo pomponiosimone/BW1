@@ -78,5 +78,14 @@ p {
 svg {
   margin-bottom: -6em;
 }
-.inDonut {
-}
+<<<<<<< Updated upstream
+
+=======
+/* .inDonut {
+  fill: transparent;
+  width: 100%;
+  height: 100%;
+  stroke-width: 100;
+  stroke: none;
+} */
+>>>>>>> Stashed changes
