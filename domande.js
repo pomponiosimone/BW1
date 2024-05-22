@@ -183,6 +183,15 @@ function votoFinale() {
 
   //div torta
   container.appendChild(divTorta);
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("width", "300");
+  svg.setAttribute("height", "300");
+  svg.setAttribute("viewBox", "0 0 300 300");
+  svg.setAttribute("id", "pieChart");
+  divTorta.appendChild(svg);
+  //torta
+  createPieChart(punteggio, questions.length);
 
   //div Uncorrect
   const p4 = document.createElement("p");
