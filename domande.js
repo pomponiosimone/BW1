@@ -132,8 +132,10 @@ const mostraDomande = (questionIndex) => {
       //condizione in cui se l'indice delle domande è inferiore a quello degli oggetti contenuti dento l'array continua a ripetere la funzione altrimenti passa al voto finale
       if (currentQuestionIndex < questions.length) {
         mostraDomande(currentQuestionIndex);
+        timer(60);
       } else {
         votoFinale();
+        clearInterval(currentTimerInterval);
       }
     });
     //incollo il div creato in quello esistente su HTML
@@ -148,5 +150,6 @@ function votoFinale() {
 //richiamo la funzione
 mostraDomande(currentQuestionIndex);
 window.onload = (event) => {
+  timer(60);
   console.log("page is fully loaded");
 };
