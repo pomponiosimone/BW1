@@ -1,17 +1,16 @@
-const changeNumberQ = function()
 
-{ 
-     const numberQ = document.getElementById("numberQ")
-    return numberQ.textContent = parseInt(numberQ.textContent) + 1
-}
-const primaopzione = document.getElementById("opzione1")
-primaopzione.addEventListener("click",changeNumberQ)
-const secondaopzione = document.getElementById("opzione2")
-secondaopzione.addEventListener("click",changeNumberQ)
-const terzaopzione = document.getElementById("opzione3")
-terzaopzione.addEventListener("click",changeNumberQ)
-const quartaopzione = document.getElementById("opzione4")
-quartaopzione.addEventListener("click",changeNumberQ)
+
+const changeNumberQ = function() { 
+    const numberQ = document.getElementById("numberQ");
+    numberQ.textContent = parseInt(numberQ.textContent) + 1;
+};
+document.addEventListener('click', function(event) {
+   
+    if (event.target.classList.contains('opzione')) {
+        changeNumberQ();
+    }
+});
+
 
 
 const secondsElements = document.querySelector("p");

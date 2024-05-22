@@ -4,7 +4,7 @@ text-align:center;
 }
 #container {
   width: 1200px;
-  height: 450px;
+  height: 400px;
   margin: auto;
 }
 
@@ -12,8 +12,8 @@ text-align:center;
   display: block;
   margin: auto;
 
-  width: 1000px;
-  height: 150px;
+  width: 1300px;
+  height: 180px;
   text-align: center;
  
 }
@@ -39,12 +39,13 @@ text-align:center;
 }
 #numberQuestion {
   display: inline-block;
-
-margin-left:40%;
+margin-top: 10px;
+margin-left:38%;
   width: 300px;
   height: 30px;
  align-items: center;
- line-height: 1.4px;
+ line-height: 1.1px;
+ 
 }
 
 #question {
@@ -67,7 +68,7 @@ margin:auto
  #time {
   display:flex;
   gap: 30px;
-  margin: auto;
+  margin:auto;
  }
  #time .circle {
   position: relative;
@@ -77,8 +78,7 @@ margin:auto
  justify-content: center;
  align-items: center;
  margin-left: 80%;
- 
- border-radius: 50%;
+border-radius: 50%;
  box-shadow: 0 0 10px rgba(0,0,0,25) }
 
 #time .circle::before {
