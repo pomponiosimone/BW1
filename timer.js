@@ -41,10 +41,13 @@ const timer = (duration) => {
       clearInterval(currentTimerInterval);
       //incremento l'indice nella funzione delle domande
       currentQuestionIndex++;
+      changeNumberQ();
       if (currentQuestionIndex < questions.length) {
         mostraDomande(currentQuestionIndex);
         // Avvia il timer per la nuova domanda
         timer(60); // Imposta la durata del timer per la nuova domanda
+      } else {
+        votoFinale();
       }
     }
   };
