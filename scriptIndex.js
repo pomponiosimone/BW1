@@ -2,7 +2,7 @@ const checkAndRedirect = () => {
   const button = document.getElementById("proceedButton");
   button.addEventListener("click", function (event) {
     //previene il comportamento default di refresh della pagina del bottone
-    event.preventDefault();
+
     // Controlla se la checkbox è selezionata
     const checkbox = document.getElementById("condition");
     if (checkbox.checked) {
