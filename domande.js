@@ -93,14 +93,141 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-let punteggio = [];
-const domande = () => {
-  const domanda = document.getElementById("domandaRND");
-  const risposta1 = document.getElementById("opzione1");
-  const risposta2 = document.getElementById("opzione2");
-  const risposta3 = document.getElementById("opzione3");
-  const risposta4 = document.getElementById("opzione4");
-  for (let index = 0; index < questions.length; index++) {
-    domanda.innerText = questions[index].question;
-  }
+//creo una variabile per il punteggio e un index per gli oggetti delle domande
+let punteggio = 0;
+let currentQuestionIndex = 0;
+const domandaElement = document.getElementById("domandaRND");
+const container = document.getElementById("container");
+
+//creo una funzione che mostri le domande
+const mostraDomande = (questionIndex) => {
+  //qui assegno ad una costante la domanda corrente estratta dalla proprietà "questions"
+  const domandaCorrente = questions[questionIndex];
+  domandaElement.innerText = domandaCorrente.question;
+  //svuoto il container per a prossima domanda
+  container.innerHTML = "";
+  //creo una copia dell'array risposte incorrette dell'elemento in oggetto(quello corrente per intederci)
+  let risposte = [...domandaCorrente.incorrect_answers];
+  //prendo l'array appena creato e grazie ad splice inserisco dentro la risposta corretta non prima di assegnargli un indice casuale a seconda della lunghezza dell'array risposte
+  risposte.splice(
+    Math.floor(Math.random() * (risposte.length + 1)),
+    0,
+    domandaCorrente.correct_answer
+  );
+
+  //creo un loop con forEach che ha come parametro "answer" non è altro che le risposte in generale siano esse giuste o sbagliate, non faccio altro che creare un "button"
+  //non è altro che un div con un evento "click"
+  risposte.forEach((answer) => {
+    const button = document.createElement("div");
+    //assegno una classe
+    button.classList.add("opzione");
+    //inserisco una delle risposte in oggetto dentro questo div chiamato button
+    button.innerText = answer;
+
+    //evento click
+    button.addEventListener("click", () => {
+      //condizione se la risposta cliccata è corretta allora il punteggio si somma di 1 il suo valore
+      if (answer === domandaCorrente.correct_answer) {
+        punteggio++;
+      }
+      //aumento anche l'indice currentQuestion per prendere il secondo oggetto dentro l'array questions, tale indice è stato creato a inizio funzione.
+      currentQuestionIndex++;
+
+      //condizione in cui se l'indice delle domande è inferiore a quello degli oggetti contenuti dento l'array continua a ripetere la funzione altrimenti passa al voto finale
+      if (currentQuestionIndex < questions.length) {
+        mostraDomande(currentQuestionIndex);
+        timer(60);
+      } else {
+        votoFinale();
+      }
+    });
+    //incollo il div creato in quello esistente su HTML
+    container.appendChild(button);
+  });
+};
+
+//funzione di voto finale, dovrebbe collegarsi al grafico a torta fatto da uno di voi (penso Brian)
+function votoFinale() {
+  const timer = document.getElementById("time");
+  timer.setAttribute("style", "display:none");
+  const numberQuestion = document.getElementById("numberQuestion");
+  numberQuestion.setAttribute("style", "display:none");
+
+  // Creo il bottone che manda alla pagina del feedback
+
+  const footer = document.querySelector("footer");
+  const containerButton = document.createElement("div");
+  containerButton.classList.add("containerButton");
+  const button = document.createElement("button");
+  button.innerText = "Rate Us";
+  const daiUnFeedback = () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.location.href = "Feedback.html";
+    });
+    containerButton.appendChild(button);
+    footer.appendChild(containerButton);
+  };
+  daiUnFeedback();
+
+  domandaElement.innerText = "Result";
+  container.innerHTML = "";
+  const h4 = document.createElement("h4");
+  h4.innerText = "The summer of your answer: ";
+  domandaElement.appendChild(h4);
+
+  //creo 3 div da appendere poi a Container
+
+  const divCorrect = document.createElement("div");
+  divCorrect.classList.add("risposte");
+  const divTorta = document.createElement("div");
+  divTorta.classList.add("risposte");
+  const divUncorrect = document.createElement("div");
+  divUncorrect.classList.add("risposte");
+
+  ////div Correct/I paragrafi del div1
+  const p1 = document.createElement("p");
+  p1.innerText = "Correct";
+  p1.classList.add("rightWrong");
+  const p2 = document.createElement("p");
+  p2.innerText = `${(punteggio / 10) * 100}%`;
+  p2.classList.add("risultatoPercentuale");
+  const p3 = document.createElement("p");
+  p3.innerText = `${punteggio}/${questions.length}`;
+  divCorrect.appendChild(p1);
+  divCorrect.appendChild(p2);
+  divCorrect.appendChild(p3);
+  container.appendChild(divCorrect);
+
+  //div torta
+  container.appendChild(divTorta);
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, "svg");
+  svg.setAttribute("width", "300");
+  svg.setAttribute("height", "300");
+  svg.setAttribute("viewBox", "0 0 300 300");
+  svg.setAttribute("id", "pieChart");
+  divTorta.appendChild(svg);
+  //torta
+  createPieChart(punteggio, questions.length);
+
+  //div Uncorrect
+  const p4 = document.createElement("p");
+  p4.innerText = "Uncorrect";
+  p4.classList.add("rightWrong");
+  const p5 = document.createElement("p");
+  p5.innerText = `${((questions.length - punteggio) / 10) * 100}%`;
+  p5.classList.add("risultatoPercentuale");
+  const p6 = document.createElement("p");
+  p6.innerText = `${questions.length - punteggio}/${questions.length}`;
+  divUncorrect.appendChild(p4);
+  divUncorrect.appendChild(p5);
+  divUncorrect.appendChild(p6);
+  container.appendChild(divUncorrect);
+}
+//richiamo la funzione
+mostraDomande(currentQuestionIndex);
+window.onload = (event) => {
+  timer(60);
+  console.log("page is fully loaded");
 };

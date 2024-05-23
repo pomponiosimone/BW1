@@ -35,32 +35,27 @@ function createPieChart(punteggio, questions) {
   const innerRadius = 100;
   const svg = document.getElementById("pieChart");
 
-  //rimuoviamo eventuali elementi esistenti per evitare sovraposizioni quando la funzione "createPieChart" viene richiamato piu volte
-  while (svg.firstChild) {
-    svg.removeChild(svg.firstChild);
-  }
   //Iteriamo sui dati per creare ogni segmento del grafico
   data.forEach((value, index) => {
-    //calcoliamo l'angolo del segmento corrente
+    // calcoliamo l'angolo del segmento corrente
     const sliceAngolo = (value / totale) * 360;
-    //calcoliamo le coordinate del primo punto del segmento
+    // calcoliamo le coordinate del primo punto del segmento
     const x1 = radius * Math.cos((angoloIniziale * Math.PI) / 180);
     const y1 = radius * Math.sin((angoloIniziale * Math.PI) / 180);
-    //aggiungiamo l'angolo del segmento
+    // aggiungiamo l'angolo del segmento
     angoloIniziale += sliceAngolo;
-    //calcoliamo le coordinate del secondo punto del segmento
+    // calcoliamo le coordinate del secondo punto del segmento
     const x2 = radius * Math.cos((angoloIniziale * Math.PI) / 180);
     const y2 = radius * Math.sin((angoloIniziale * Math.PI) / 180);
-    //dobbiamo determinare se l'angolo del segmento è maggiore di 180 gradi
+    // dobbiamo determinare se l'angolo del segmento è maggiore di 180 gradi
     const arc = sliceAngolo > 180 ? 1 : 0;
 
-    //coordinate del cerchio trasparente in centro
     const ix1 = innerRadius * Math.cos(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
     const iy1 = innerRadius * Math.sin(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
     const ix2 = innerRadius * Math.cos((angoloIniziale * Math.PI) / 180);
     const iy2 = innerRadius * Math.sin((angoloIniziale * Math.PI) / 180);
 
-    //stringa per disegnare il segmento (path data)
+    // stringa per disegnare il segmento (path data)
     const pathData = `
           M ${150 + x1} ${150 + y1}
           A ${radius} ${radius} 0 ${arc} 1 ${150 + x2} ${150 + y2}
@@ -69,32 +64,30 @@ function createPieChart(punteggio, questions) {
           Z
         `;
 
-    //creamo un nuovo elemento "path" per il segmento
+    // creiamo un nuovo elemento "path" per il segmento
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    //impostiamo l'attributo "d" con la stringa "pathData" e l'attributo "fill" con il colore corrispondente
+    // impostiamo l'attributo "d" con la stringa "pathData" e l'attributo "fill" con il colore corrispondente
     path.setAttribute("d", pathData);
     path.setAttribute("fill", colori[index]);
 
-    //aggiungiamo l'elemento "path" al grafico SVG
+    // aggiungiamo l'elemento "path" al grafico SVG
     svg.appendChild(path);
   });
 
-  //aggungiamo un cerchio trasparente al centro del grafico
+  // aggiungiamo un cerchio trasparente al centro del grafico
   const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
-  //impostiamo le coordinate del centro e il raggio
+  // impostiamo le coordinate del centro e il raggio
   circle.setAttribute("cx", "150");
   circle.setAttribute("cy", "150");
   circle.setAttribute("r", innerRadius);
-  circle.setAttribute("stroke", "black");
-  // circle.setAttribute("stroke-width", 150)
   //impostiamo il colore del contorno del come trasparente
   circle.setAttribute("fill", "transparent");
 
   svg.appendChild(circle);
 
-  //aggiungiamo un testo al centro del grafico
-  //se il voto è maggiore a 6 stampa "congratulazioni", altrimenti stampa "hai fallito"
-  const text = punteggio >= 6 ? "Congratulations!" : "You Failed!";
+  // aggiungiamo un testo al centro del grafico
+  // se il voto è maggiore a 6 stampa "congratulazioni", altrimenti stampa "hai fallito"
+  const text = punteggio >= 6 ? "Congratulations!" : "Sei na capra!";
 
   const textElement = document.createElementNS("http://www.w3.org/2000/svg", "text");
   textElement.setAttribute("x", "150");
@@ -109,7 +102,7 @@ function createPieChart(punteggio, questions) {
   svg.appendChild(textElement);
 }
 
-const punteggio = 6;
+const punteggio = 10;
 const questions = 10;
 
 createPieChart(punteggio, questions);

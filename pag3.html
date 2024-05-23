@@ -10,7 +10,11 @@
   </head>
   <body>
     <header>
-      <img src="./assets/img/epicode_logo.png" alt="epicode-logo" id="logoImage" />
+      <img
+        src="./assets/img/epicode_logo.png"
+        alt="epicode-logo"
+        id="logoImage"
+      />
     </header>
     <main>
       <h2>Results</h2>
@@ -19,21 +23,29 @@
         <div id="correctAnswer" class="answers">
           <div class="rightWrong">Correct</div>
           <p class="risultatoPercentuale">60%</p>
-          <p>6/10 questions</p>
+          <p class="nQuestion">6/10 questions</p>
         </div>
         <div class="answers">
-          <svg width="300" height="300" viewBox="0 0 300 300" id="pieChart"></svg>
+          <svg
+            width="300"
+            height="300"
+            viewBox="0 0 300 300"
+            id="pieChart"
+          ></svg>
         </div>
         <div id="uncorrectAnswer" class="answers">
           <div class="rightWrong">Wrong</div>
           <p class="risultatoPercentuale">40%</p>
-          <p>4/10 questions</p>
+          <p class="nQuestion">4/10 questions</p>
         </div>
       </div>
       <section>
-        <button type="button" id="rateUs" href="#">RATE US</button>
+        <button type="button" id="rateUs" href="./Feedback.html">
+          RATE US
+        </button>
       </section>
     </main>
     <script src="./pieChart.js"></script>
+    <script src="./scriptPag3.js"></script>
   </body>
 </html>
