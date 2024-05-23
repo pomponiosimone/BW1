@@ -73,10 +73,13 @@ stars.forEach((star, index) => {
 const button = document.querySelector(".glowButton");
 button.addEventListener("click", () => {
   event.preventDefault();
+  const section = document.getElementById("section");
+  section.setAttribute("style", "display: none");
   const footer = document.querySelector("footer");
   footer.innerHTML = "";
   const divFooter = document.createElement("div");
   const messaggio = document.createElement("p");
+  messaggio.setAttribute("style", "font-size: xx-large");
   if (clickedIndex >= 5) {
     messaggio.innerText = "Grazie per il tuo feedback!";
   } else {
