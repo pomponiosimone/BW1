@@ -139,6 +139,8 @@ const mostraDomande = (questionIndex) => {
         timer(60);
       } else {
         votoFinale();
+        //richiamo la funzione timer senza parametro in modo tale che al click dell'ultima domanda non parta nuovamente il timer
+        timer();
       }
     });
     //incollo il div creato in quello esistente su HTML
@@ -183,7 +185,7 @@ function votoFinale() {
   const divCorrect = document.createElement("div");
   divCorrect.classList.add("risposte");
   const divTorta = document.createElement("div");
-  divTorta.classList.add("risposte");
+  divTorta.classList.add("torta");
   const divUncorrect = document.createElement("div");
   divUncorrect.classList.add("risposte");
 
@@ -213,9 +215,9 @@ function votoFinale() {
   //torta
   createPieChart(punteggio, questions.length);
 
-  //div Uncorrect
+  //div Wrong
   const p4 = document.createElement("p");
-  p4.innerText = "Uncorrect";
+  p4.innerText = "Wrong";
   p4.classList.add("rightWrong");
   const p5 = document.createElement("p");
   p5.innerText = `${((questions.length - punteggio) / 10) * 100}%`;
@@ -233,3 +235,4 @@ window.onload = (event) => {
   timer(60);
   console.log("page is fully loaded");
 };
+////nota

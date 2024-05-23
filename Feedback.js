@@ -69,6 +69,8 @@ stars.forEach((star, index) => {
   star.addEventListener("mouseout", handleMouseOut);
   star.addEventListener("click", () => handleClick(index));
 });
+//creazione messaggio quando viene premuto il tasto INFO
+//ciao
 
 window.onload = (event) => {
   console.log("page is fully loaded");

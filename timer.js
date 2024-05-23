@@ -50,6 +50,7 @@ const timer = (duration) => {
         timer(60); // Imposta la durata del timer per la nuova domanda
       } else {
         //se arriviamo all'ultima domanda si avvia la funzione che mostra i risultati
+
         votoFinale();
       }
     }
@@ -59,5 +60,4 @@ const timer = (duration) => {
   currentTimerInterval = setInterval(updateTimer, 1000);
 };
 
-timer(60);
 // Richiama il timer dopo qualche secondo per vedere l'effetto della cancellazione del precedente
