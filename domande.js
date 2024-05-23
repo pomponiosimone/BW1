@@ -215,7 +215,7 @@ function votoFinale() {
   //torta
   createPieChart(punteggio, questions.length);
 
-  //div Uncorrect
+  //div Wrong
   const p4 = document.createElement("p");
   p4.innerText = "Wrong";
   p4.classList.add("rightWrong");
