@@ -217,7 +217,7 @@ function votoFinale() {
 
   //div Uncorrect
   const p4 = document.createElement("p");
-  p4.innerText = "Uncorrect";
+  p4.innerText = "Wrong";
   p4.classList.add("rightWrong");
   const p5 = document.createElement("p");
   p5.innerText = `${((questions.length - punteggio) / 10) * 100}%`;
