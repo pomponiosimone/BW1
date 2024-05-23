@@ -39,13 +39,17 @@ width: 30%;
     0px 5px 0px 0px rgba(0, 0, 0, 0.15);
 }
 #numberQuestion {
+  position: absolute;
+  top: 85%;
+  left: 49%; 
+  transform: translateX(-50%); 
   display: inline-block;
-  margin-top: 10px;
-  margin-left: 41%;
+  text-align: center;
   width: 300px;
   height: 30px;
   align-items: center;
-  line-height: 1.1px;
+  line-height: 1.2px;
+  margin-right: 5%;
 }
 
 #question {
@@ -144,7 +148,7 @@ width: 30%;
 #numberQ {
   color: white;
   font-size: 1.3em;
-  margin-left: 74%;
+  margin-left: 65%;
   line-height: 0px;
 }
 
@@ -152,10 +156,12 @@ width: 30%;
   display: inline-block;
   width: 250px;
   line-height: 0;
+  vertical-align:top
+  
 }
 
 .rightWrong {
-  font-size: xx-large;
+  font-size: 60px;
 }
 
 .risultatoPercentuale {
@@ -177,9 +183,9 @@ width: 30%;
 .containerButton button {
   background: none;
   color: white;
-  width: 25%;
+  width: 100%;
   height: 2.5em;
-  padding: 0;
+  padding: 0.4em;
   font-family: "Inter", sans-serif;
   font-weight: 800;
   font-size: 25px;
@@ -189,5 +195,11 @@ width: 30%;
 }
 .containerButton {
   display: inline-block;
+  text-align: center;
   margin: 10px 35%;
+
+}
+footer {
+  margin: 3em;
+  text-align: center;
 }
