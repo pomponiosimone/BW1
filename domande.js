@@ -185,7 +185,7 @@ function votoFinale() {
   const divCorrect = document.createElement("div");
   divCorrect.classList.add("risposte");
   const divTorta = document.createElement("div");
-  divTorta.classList.add("risposte");
+  divTorta.classList.add("torta");
   const divUncorrect = document.createElement("div");
   divUncorrect.classList.add("risposte");
 
@@ -215,9 +215,9 @@ function votoFinale() {
   //torta
   createPieChart(punteggio, questions.length);
 
-  //div Uncorrect
+  //div Wrong
   const p4 = document.createElement("p");
-  p4.innerText = "Uncorrect";
+  p4.innerText = "Wrong";
   p4.classList.add("rightWrong");
   const p5 = document.createElement("p");
   p5.innerText = `${((questions.length - punteggio) / 10) * 100}%`;
