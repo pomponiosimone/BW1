@@ -157,6 +157,9 @@ const mostraDomande = (questionIndex) => {
     container.appendChild(button);
   });
 };
+
+//funzione per disalibitare i tasti
+
 const disabilitaRisposte = () => {
   const buttons = container.querySelectorAll(".opzione");
   buttons.forEach((button) => {
