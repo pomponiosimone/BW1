@@ -23,10 +23,8 @@ function createPieChart(punteggio, questions) {
     // dobbiamo determinare se l'angolo del segmento è maggiore di 180 gradi
     const arc = sliceAngolo > 180 ? 1 : 0;
 
-    const ix1 =
-      innerRadius * Math.cos(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
-    const iy1 =
-      innerRadius * Math.sin(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
+    const ix1 = innerRadius * Math.cos(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
+    const iy1 = innerRadius * Math.sin(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
     const ix2 = innerRadius * Math.cos((angoloIniziale * Math.PI) / 180);
     const iy2 = innerRadius * Math.sin((angoloIniziale * Math.PI) / 180);
 
@@ -50,10 +48,7 @@ function createPieChart(punteggio, questions) {
   });
 
   // aggiungiamo un cerchio trasparente al centro del grafico
-  const circle = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "circle"
-  );
+  const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
   // impostiamo le coordinate del centro e il raggio
   circle.setAttribute("cx", "150");
   circle.setAttribute("cy", "150");
@@ -65,20 +60,45 @@ function createPieChart(punteggio, questions) {
 
   // aggiungiamo un testo al centro del grafico
   // se il voto è maggiore a 6 stampa "congratulazioni", altrimenti stampa "hai fallito"
-  const text = punteggio >= 6 ? "Congratulations!" : "Sei na capra!";
+  const text =
+    punteggio >= 6
+      ? [
+          "Congratulations!",
+          "You passed the exam.",
+          "",
+          "We'll send you the certificate",
+          " in few minutes",
+          "Check your email (including",
+          "promotions / spam folder).",
+        ]
+      : [
+          "Try again!",
+          "You Failed the exam",
+          "",
+          "Be attentive in your lessons,",
+          "study hard and ask your",
+          "professors and mentors",
+          "if you need help.",
+        ];
+  text.forEach((line, index) => {
+    const textElement = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    textElement.setAttribute("x", "150");
+    textElement.setAttribute("y", 100 + index * 20 - 10);
+    textElement.setAttribute("text-anchor", "middle");
+    // textElement.setAttribute("dy", ".3em");
+    // textElement.setAttribute("font-size", "12");
+    textElement.setAttribute("font-family", "Arial");
+    textElement.setAttribute("fill", "white");
+    textElement.setAttribute("fill", index === 1 ? "#00ffff" : "white");
 
-  const textElement = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "text"
-  );
-  textElement.setAttribute("x", "150");
-  textElement.setAttribute("y", "150");
-  textElement.setAttribute("text-anchor", "middle");
-  textElement.setAttribute("dy", ".3em");
-  textElement.setAttribute("font-size", "20");
-  textElement.setAttribute("font-family", "Arial");
-  textElement.setAttribute("fill", "white");
-  textElement.textContent = text;
+    if (index < 2) {
+      textElement.setAttribute("font-size", "15");
+      textElement.setAttribute("font-weight", "bold");
+    } else {
+      textElement.setAttribute("font-size", "11");
+    }
+    textElement.textContent = line;
 
-  svg.appendChild(textElement);
+    svg.appendChild(textElement);
+  });
 }
