@@ -16,14 +16,13 @@
   text-align: center;
 }
 .opzione:hover {
-  background-color: #ff00ff;
+  background: linear-gradient(180deg, #d20094, #900080);
 }
 .opzione {
-  
   display: inline-block;
   cursor: pointer;
   border: 4px solid white;
-width: 30%;
+  width: 30%;
   height: 10%;
   line-height: 1.5px;
   font-family: Arial, Verdana, sans-serif;
@@ -39,11 +38,10 @@ width: 30%;
     0px 5px 0px 0px rgba(0, 0, 0, 0.15);
 }
 #numberQuestion {
- 
   position: absolute;
   top: 91%;
-  left: 48%; 
-  transform: translateX(-50%); 
+  left: 48%;
+  transform: translateX(-50%);
   display: inline-block;
   text-align: center;
   width: 300px;
@@ -74,7 +72,6 @@ width: 30%;
   display: flex;
   gap: 30px;
   margin: auto;
-  
 }
 #time .circle {
   position: relative;
@@ -86,7 +83,6 @@ width: 30%;
   margin-left: 80%;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 25);
-  
 }
 
 #time .circle::before {
@@ -116,7 +112,7 @@ width: 30%;
   fill: transparent;
   stroke-width: 10;
   stroke: #00ffff;
-   stroke-linecap: round;
+  stroke-linecap: round;
   transform: translate(5px, 5px);
   stroke-dasharray: 440;
 }
@@ -157,8 +153,7 @@ width: 30%;
   display: inline-block;
   width: 250px;
   line-height: 0;
-  vertical-align:top
-  
+  vertical-align: top;
 }
 
 .rightWrong {
@@ -198,7 +193,6 @@ width: 30%;
   display: inline-block;
   text-align: center;
   margin: 10px 35%;
-
 }
 footer {
   margin: 3em;
