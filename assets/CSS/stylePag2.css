@@ -40,7 +40,8 @@ width: 30%;
 }
 #numberQuestion {
   display: inline-block;
-  text-align: center;
+  margin-top: 10px;
+  margin-left: 41%;
   width: 300px;
   height: 30px;
   align-items: center;
@@ -68,6 +69,7 @@ width: 30%;
   display: flex;
   gap: 30px;
   margin: auto;
+  
 }
 #time .circle {
   position: relative;
@@ -79,6 +81,7 @@ width: 30%;
   margin-left: 80%;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 25);
+  
 }
 
 #time .circle::before {
@@ -107,8 +110,8 @@ width: 30%;
   height: 100%;
   fill: transparent;
   stroke-width: 10;
-  stroke: #03fcf8;
-  stroke-linecap: round;
+  stroke: #00ffff;
+   stroke-linecap: round;
   transform: translate(5px, 5px);
   stroke-dasharray: 440;
 }
@@ -141,7 +144,7 @@ width: 30%;
 #numberQ {
   color: white;
   font-size: 1.3em;
-  margin-left: 65%;
+  margin-left: 74%;
   line-height: 0px;
 }
 
@@ -149,12 +152,10 @@ width: 30%;
   display: inline-block;
   width: 250px;
   line-height: 0;
-  vertical-align:top
-  
 }
 
 .rightWrong {
-  font-size: 60px;
+  font-size: xx-large;
 }
 
 .risultatoPercentuale {
@@ -176,9 +177,9 @@ width: 30%;
 .containerButton button {
   background: none;
   color: white;
-  width: 100%;
+  width: 25%;
   height: 2.5em;
-  padding: 0.4em;
+  padding: 0;
   font-family: "Inter", sans-serif;
   font-weight: 800;
   font-size: 25px;
@@ -188,12 +189,5 @@ width: 30%;
 }
 .containerButton {
   display: inline-block;
-  text-align: center;
   margin: 10px 35%;
-
-}
-footer {
-  margin: 2.9em;
-  text-align: center;
-
 }
