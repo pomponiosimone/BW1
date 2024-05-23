@@ -128,6 +128,13 @@ const mostraDomande = (questionIndex) => {
     //evento click
     button.addEventListener("click", () => {
       clearTimeout(timer2);
+      //devo fare in modo che i bottoni non siano cliccabili dopo il primo click fino alla domanda successiva
+      //seleziono tutti i bottoni delle risposte tramite la classe
+      const buttons = document.querySelectorAll(".opzione");
+      //applico quindi a tutti i bottoni la classe che disattivera la funzione "pointer"
+      buttons.forEach((button) => {
+        button.classList.add("disabilitato");
+      });
 
       //condizione se la risposta cliccata è corretta allora il punteggio si somma di 1 il suo valore
       if (answer === domandaCorrente.correct_answer) {
@@ -152,7 +159,7 @@ const mostraDomande = (questionIndex) => {
           //richiamo la funzione timer senza parametro in modo tale che al click dell'ultima domanda non parta nuovamente il timer
           timer();
         }
-      }, 500);
+      }, 1000);
       //incollo il div creato in quello esistente su HTML
     });
     container.appendChild(button);
