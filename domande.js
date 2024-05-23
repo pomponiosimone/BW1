@@ -183,7 +183,7 @@ function votoFinale() {
   const divCorrect = document.createElement("div");
   divCorrect.classList.add("risposte");
   const divTorta = document.createElement("div");
-  divTorta.classList.add("risposte");
+  divTorta.classList.add("torta");
   const divUncorrect = document.createElement("div");
   divUncorrect.classList.add("risposte");
 
