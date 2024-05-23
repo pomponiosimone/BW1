@@ -80,7 +80,8 @@ button.addEventListener("click", () => {
   if (clickedIndex >= 5) {
     messaggio.innerText = "Grazie per il tuo feedback!";
   } else {
-    messaggio.innerText = "Ci dispiace della tua esperienza su Epicode";
+    messaggio.innerText =
+      "Ci dispiace della tua esperienza su Epicode, non farti problemi a contattarci per migliorare la tua esperienza!";
   }
   divFooter.appendChild(messaggio);
   footer.appendChild(divFooter);
