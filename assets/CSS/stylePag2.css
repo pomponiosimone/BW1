@@ -39,9 +39,10 @@ width: 30%;
     0px 5px 0px 0px rgba(0, 0, 0, 0.15);
 }
 #numberQuestion {
+ 
   position: absolute;
-  top: 85%;
-  left: 49%; 
+  top: 91%;
+  left: 48%; 
   transform: translateX(-50%); 
   display: inline-block;
   text-align: center;
