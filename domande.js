@@ -139,6 +139,8 @@ const mostraDomande = (questionIndex) => {
         timer(60);
       } else {
         votoFinale();
+        //richiamo la funzione timer senza parametro in modo tale che al click dell'ultima domanda non parta nuovamente il timer
+        timer();
       }
     });
     //incollo il div creato in quello esistente su HTML
