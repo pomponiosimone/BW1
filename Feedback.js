@@ -70,6 +70,21 @@ stars.forEach((star, index) => {
   star.addEventListener("click", () => handleClick(index));
 });
 //creazione messaggio quando viene premuto il tasto INFO
+const button = document.querySelector(".glowButton");
+button.addEventListener("click", () => {
+  event.preventDefault();
+  const footer = document.querySelector("footer");
+  footer.innerHTML = "";
+  const divFooter = document.createElement("div");
+  const messaggio = document.createElement("p");
+  if (clickedIndex >= 5) {
+    messaggio.innerText = "Grazie per il tuo feedback!";
+  } else {
+    messaggio.innerText = "Ci dispiace della tua esperienza su Epicode";
+  }
+  divFooter.appendChild(messaggio);
+  footer.appendChild(divFooter);
+});
 
 window.onload = (event) => {
   console.log("page is fully loaded");
