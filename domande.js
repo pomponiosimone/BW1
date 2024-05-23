@@ -154,12 +154,15 @@ function votoFinale() {
   numberQuestion.setAttribute("style", "display:none");
 
   // Creo il bottone che manda alla pagina del feedback
+
+  const footer = document.querySelector("footer");
+  const containerButton = document.createElement("div");
+  containerButton.classList.add("containerButton");
+  const button = document.createElement("button");
+  button.innerText = "Rate Us";
+  containerButton.appendChild(button);
+  footer.appendChild(containerButton);
   const daiUnFeedback = () => {
-    const footer = document.querySelector("footer");
-    const containerButton = document.createElement("div");
-    containerButton.classList.add("containerButton");
-    const button = document.createElement("button");
-    button.innerText = "Rate Us";
     button.addEventListener("click", (event) => {
       event.preventDefault();
       window.location.href = "Feedback.html";

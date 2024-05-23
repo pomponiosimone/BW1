@@ -144,16 +144,15 @@
   margin-left: 74%;
   line-height: 0px;
 }
-/* CSS per il block di Brian */
+
 .risposte {
   display: inline-block;
   width: 250px;
-  /* height: 200px; */
   line-height: 0;
 }
 
-.rightwrong {
-  font-size: 40px;
+.rightWrong {
+  font-size: xx-large;
 }
 
 .risultatoPercentuale {
@@ -186,6 +185,6 @@
   border: 2px solid white;
 }
 .containerButton {
-  display: inline;
+  display: inline-block;
   margin: 10px 35%;
 }
