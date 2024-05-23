@@ -161,7 +161,7 @@ font-weight: bold;
 
 }
 
-.rightwrong {
+.rightWrong {
   font-size: xx-large
 }
 
@@ -197,6 +197,6 @@ font-weight: bold;
 }
 .containerButton {
  
-  display: inline;
+  display: inline-block;
   margin: 10px 35%;
 }

@@ -160,6 +160,8 @@ function votoFinale() {
   containerButton.classList.add("containerButton");
   const button = document.createElement("button");
   button.innerText = "Rate Us";
+  containerButton.appendChild(button);
+  footer.appendChild(containerButton);
   const daiUnFeedback = () => {
     button.addEventListener("click", (event) => {
       event.preventDefault();
