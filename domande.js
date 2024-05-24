@@ -254,4 +254,21 @@ window.onload = (event) => {
   timer(60);
   console.log("page is fully loaded");
 };
-////nota
+
+/* const difficulty = document.getElementById("difficulty").value;
+const ndomandeScelte = parseInt(document.getElementById("???").value);
+
+function difficoltà(difficulty, ndomandeScelte) {
+  switch (difficulty) {
+    case "easy":
+      questions = easyQuestions.slice(0, ndomandeScelte);
+      break;
+    case "medium":
+      questions = mediumQuestions.slice(0, ndomandeScelte);
+      break;
+    case "hard":
+      questions = hardQuestions.slice(0, ndomandeScelte);
+      break;
+  }
+}
+ */
