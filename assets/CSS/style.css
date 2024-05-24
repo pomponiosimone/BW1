@@ -49,6 +49,8 @@ main {
 }
 
 .purpleColor {
+  font-size: 25px;
+  font-weight: 600;
   background: linear-gradient(180deg, #d20094, #900080);
   -webkit-background-clip: text;
   background-clip: text;
