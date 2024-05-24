@@ -148,6 +148,7 @@ const mostraDomande = (questionIndex) => {
         //aumento anche l'indice currentQuestion per prendere il secondo oggetto dentro l'array questions, tale indice è stato creato a inizio funzione.
         currentQuestionIndex++;
         changeNumberQ();
+        console.log("ciaooooo");
 
         //condizione in cui se l'indice delle domande è inferiore a quello degli oggetti contenuti dento l'array continua a ripetere la funzione altrimenti passa al voto finale
         if (currentQuestionIndex < questions.length) {
@@ -162,15 +163,6 @@ const mostraDomande = (questionIndex) => {
       //incollo il div creato in quello esistente su HTML
     });
     container.appendChild(button);
-  });
-};
-
-//funzione per disalibitare i tasti
-
-const disabilitaRisposte = () => {
-  const buttons = container.querySelectorAll(".opzione");
-  buttons.forEach((button) => {
-    button.style.pointerEvents = "none"; // Disabilita i clic sui pulsanti
   });
 };
 
@@ -261,21 +253,4 @@ window.onload = (event) => {
   timer(60);
   console.log("page is fully loaded");
 };
-
-/* const difficulty = document.getElementById("difficulty").value;
-const ndomandeScelte = parseInt(document.getElementById("???").value);
-
-function difficoltà(difficulty, ndomandeScelte) {
-  switch (difficulty) {
-    case "easy":
-      questions = easyQuestions.slice(0, ndomandeScelte);
-      break;
-    case "medium":
-      questions = mediumQuestions.slice(0, ndomandeScelte);
-      break;
-    case "hard":
-      questions = hardQuestions.slice(0, ndomandeScelte);
-      break;
-  }
-}
- */
+////nota
