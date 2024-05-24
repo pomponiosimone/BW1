@@ -61,7 +61,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "medium",
     question:
       "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
@@ -86,7 +86,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "hard",
     question:
       "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
@@ -105,10 +105,27 @@ function pressButton() {
   buttonEasy.addEventListener("click", (event) => {
     event.preventDefault();
     const easyQ = questions.filter(
-      (question) => questions["difficulty"] === "easy"
+      (question) => question.difficulty === "easy"
     );
     //mostraDomande();
-    console.log(easyQ.length);
+    window.location.href = "./domande.js";
+    console.log(easyQ);
+  });
+  buttonMedium.addEventListener("click", (event) => {
+    event.preventDefault();
+    const mediumQ = questions.filter(
+      (question) => question.difficulty === "medium"
+    );
+    window.location.href = "./domande.js";
+    console.log(mediumQ);
+  });
+  buttonHard.addEventListener("click", (event) => {
+    event.preventDefault();
+    const hardQ = questions.filter(
+      (question) => question.difficulty === "hard"
+    );
+    window.location.href = "./domande.js";
+    console.log(hardQ);
   });
 }
 pressButton();
