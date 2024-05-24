@@ -81,10 +81,10 @@ button.addEventListener("click", () => {
   const messaggio = document.createElement("p");
   messaggio.setAttribute("style", "font-size: xx-large");
   if (clickedIndex >= 5) {
-    messaggio.innerText = "Grazie per il tuo feedback!";
+    messaggio.innerText = "Thanks for your feedback!";
   } else {
     messaggio.innerText =
-      "Ci dispiace della tua esperienza su Epicode, non farti problemi a contattarci per migliorare la tua esperienza!";
+      "We're sorry about your experience on Epicode, don't hesitate to contact us to improve your experience!";
   }
   divFooter.appendChild(messaggio);
   footer.appendChild(divFooter);
