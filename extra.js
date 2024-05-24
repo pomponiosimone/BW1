@@ -93,22 +93,20 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-
-// creo i bottoni che selezionino la difficoltà delle domande e ti rimandino alla pagina domande.js
+//creo i bottoni che selezionino la difficoltà delle domande e ti rimandino alla pagina domande.js
 function pressButton() {
   const seleziona = document.getElementById("seleziona");
   const buttonEasy = document.createElement("button");
+  buttonEasy.classList.add("modalita")
   const buttonMedium = document.createElement("button");
+  buttonMedium.classList.add("modalita")
   const buttonHard = document.createElement("button");
-
-  buttonEasy.classList.add("modalita");
-  buttonMedium.classList.add("modalita");
-  buttonHard.classList.add("modalita");
-  const divInput = document.getElementById("selezionaNumero");
-  const input = document.getElementById("questionNumber");
-
+  buttonHard.classList.add("modalita")
+ 
+ 
+  divInput.appendChild(input);
   questions.length = input.value;
-  seleziona.append(buttonEasy, buttonMedium, buttonHard);
+  seleziona.append(divInput, buttonEasy, buttonMedium, buttonHard);
   buttonEasy.textContent = "Easy";
   buttonMedium.innerText = "Medium";
   buttonHard.innerHTML = "Hard";
