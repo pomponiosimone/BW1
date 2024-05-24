@@ -100,7 +100,13 @@ function pressButton() {
   const buttonEasy = document.createElement("button");
   const buttonMedium = document.createElement("button");
   const buttonHard = document.createElement("button");
-  seleziona.append(buttonEasy, buttonMedium, buttonHard);
+  const divInput = document.createElement("div");
+  const input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("placeholder", "Quante domande vuoi ricevere...");
+  divInput.appendChild(input);
+
+  seleziona.append(divInput, buttonEasy, buttonMedium, buttonHard);
   buttonEasy.textContent = "Easy";
   buttonMedium.innerText = "Medium";
   buttonHard.innerHTML = "Hard";
