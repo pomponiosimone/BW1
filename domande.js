@@ -128,7 +128,14 @@ const mostraDomande = (questionIndex) => {
     //evento click
     button.addEventListener("click", () => {
       clearTimeout(timer2);
-      disabilitaRisposte();
+      //devo fare in modo che i bottoni non siano cliccabili dopo il primo click fino alla domanda successiva
+      //seleziono tutti i bottoni delle risposte tramite la classe
+      const buttons = document.querySelectorAll(".opzione");
+      //applico quindi a tutti i bottoni la classe che disattivera la funzione "pointer"
+      buttons.forEach((button) => {
+        button.classList.add("disabilitato");
+      });
+
       //condizione se la risposta cliccata è corretta allora il punteggio si somma di 1 il suo valore
       if (answer === domandaCorrente.correct_answer) {
         punteggio++;
@@ -141,6 +148,7 @@ const mostraDomande = (questionIndex) => {
         //aumento anche l'indice currentQuestion per prendere il secondo oggetto dentro l'array questions, tale indice è stato creato a inizio funzione.
         currentQuestionIndex++;
         changeNumberQ();
+        console.log("ciaooooo");
 
         //condizione in cui se l'indice delle domande è inferiore a quello degli oggetti contenuti dento l'array continua a ripetere la funzione altrimenti passa al voto finale
         if (currentQuestionIndex < questions.length) {
@@ -151,19 +159,10 @@ const mostraDomande = (questionIndex) => {
           //richiamo la funzione timer senza parametro in modo tale che al click dell'ultima domanda non parta nuovamente il timer
           timer();
         }
-      }, 500);
+      }, 1000);
       //incollo il div creato in quello esistente su HTML
     });
     container.appendChild(button);
-  });
-};
-
-//funzione per disalibitare i tasti
-
-const disabilitaRisposte = () => {
-  const buttons = container.querySelectorAll(".opzione");
-  buttons.forEach((button) => {
-    button.style.pointerEvents = "none"; // Disabilita i clic sui pulsanti
   });
 };
 
@@ -254,21 +253,4 @@ window.onload = (event) => {
   timer(60);
   console.log("page is fully loaded");
 };
-
-/* const difficulty = document.getElementById("difficulty").value;
-const ndomandeScelte = parseInt(document.getElementById("???").value);
-
-function difficoltà(difficulty, ndomandeScelte) {
-  switch (difficulty) {
-    case "easy":
-      questions = easyQuestions.slice(0, ndomandeScelte);
-      break;
-    case "medium":
-      questions = mediumQuestions.slice(0, ndomandeScelte);
-      break;
-    case "hard":
-      questions = hardQuestions.slice(0, ndomandeScelte);
-      break;
-  }
-}
- */
+////nota
