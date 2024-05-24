@@ -102,10 +102,14 @@ function pressButton() {
   const buttonHard = document.createElement("button");
   const divInput = document.createElement("div");
   const input = document.createElement("input");
-  input.setAttribute("type", "text");
-  input.setAttribute("placeholder", "Quante domande vuoi ricevere...");
+  input.setAttribute("type", "number");
+  input.setAttribute("max", "20");
+  input.setAttribute(
+    "placeholder",
+    "Quante domande vuoi ricevere...(da 1 a 20)"
+  );
   divInput.appendChild(input);
-
+  questions.length = input.value;
   seleziona.append(divInput, buttonEasy, buttonMedium, buttonHard);
   buttonEasy.textContent = "Easy";
   buttonMedium.innerText = "Medium";
