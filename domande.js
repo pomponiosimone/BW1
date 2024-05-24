@@ -100,6 +100,7 @@ const domandaElement = document.getElementById("domandaRND");
 const container = document.getElementById("container");
 
 //creo una funzione che mostri le domande
+let timer2;
 const mostraDomande = (questionIndex) => {
   //qui assegno ad una costante la domanda corrente estratta dalla proprietà "questions"
   const domandaCorrente = questions[questionIndex];
@@ -126,25 +127,43 @@ const mostraDomande = (questionIndex) => {
 
     //evento click
     button.addEventListener("click", () => {
+      clearTimeout(timer2);
+      disabilitaRisposte();
       //condizione se la risposta cliccata è corretta allora il punteggio si somma di 1 il suo valore
       if (answer === domandaCorrente.correct_answer) {
         punteggio++;
-      }
-      //aumento anche l'indice currentQuestion per prendere il secondo oggetto dentro l'array questions, tale indice è stato creato a inizio funzione.
-      currentQuestionIndex++;
-
-      //condizione in cui se l'indice delle domande è inferiore a quello degli oggetti contenuti dento l'array continua a ripetere la funzione altrimenti passa al voto finale
-      if (currentQuestionIndex < questions.length) {
-        mostraDomande(currentQuestionIndex);
-        timer(60);
+        button.classList.add("correct");
       } else {
-        votoFinale();
-        //richiamo la funzione timer senza parametro in modo tale che al click dell'ultima domanda non parta nuovamente il timer
-        timer();
+        button.classList.add("incorrect");
       }
+
+      timer2 = setTimeout(() => {
+        //aumento anche l'indice currentQuestion per prendere il secondo oggetto dentro l'array questions, tale indice è stato creato a inizio funzione.
+        currentQuestionIndex++;
+        changeNumberQ();
+
+        //condizione in cui se l'indice delle domande è inferiore a quello degli oggetti contenuti dento l'array continua a ripetere la funzione altrimenti passa al voto finale
+        if (currentQuestionIndex < questions.length) {
+          mostraDomande(currentQuestionIndex);
+          timer(60);
+        } else {
+          votoFinale();
+          //richiamo la funzione timer senza parametro in modo tale che al click dell'ultima domanda non parta nuovamente il timer
+          timer();
+        }
+      }, 500);
+      //incollo il div creato in quello esistente su HTML
     });
-    //incollo il div creato in quello esistente su HTML
     container.appendChild(button);
+  });
+};
+
+//funzione per disalibitare i tasti
+
+const disabilitaRisposte = () => {
+  const buttons = container.querySelectorAll(".opzione");
+  buttons.forEach((button) => {
+    button.style.pointerEvents = "none"; // Disabilita i clic sui pulsanti
   });
 };
 

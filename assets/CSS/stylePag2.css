@@ -198,3 +198,10 @@ footer {
   margin: 3em;
   text-align: center;
 }
+.correct {
+  background-color: green;
+  color: white;
+}
+.incorrect {
+  background-color: red;
+  color: white;}
