@@ -116,5 +116,3 @@ function pressButton() {
     console.log(easyQ.length);
   });
 }
-pressButton();
-//ciao
