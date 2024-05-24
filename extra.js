@@ -61,7 +61,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "medium",
+    difficulty: "easy",
     question:
       "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
@@ -86,7 +86,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "hard",
+    difficulty: "easy",
     question:
       "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
@@ -100,17 +100,15 @@ function pressButton() {
   const buttonEasy = document.createElement("button");
   const buttonMedium = document.createElement("button");
   const buttonHard = document.createElement("button");
-  const divInput = document.createElement("div");
-  const input = document.createElement("input");
-  input.setAttribute("type", "number");
-  input.setAttribute("max", "20");
-  input.setAttribute(
-    "placeholder",
-    "Quante domande vuoi ricevere...(da 1 a 20)"
-  );
-  divInput.appendChild(input);
+
+  buttonEasy.classList.add("modalita");
+  buttonMedium.classList.add("modalita");
+  buttonHard.classList.add("modalita");
+  const divInput = document.getElementById("selezionaNumero");
+  const input = document.getElementById("questionNumber");
+
   questions.length = input.value;
-  seleziona.append(divInput, buttonEasy, buttonMedium, buttonHard);
+  seleziona.append(buttonEasy, buttonMedium, buttonHard);
   buttonEasy.textContent = "Easy";
   buttonMedium.innerText = "Medium";
   buttonHard.innerHTML = "Hard";
@@ -141,6 +139,3 @@ function pressButton() {
   });
 }
 pressButton();
-//ciao
-//ciao
-//ciao

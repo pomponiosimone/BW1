@@ -7,7 +7,7 @@ const checkAndRedirect = () => {
     const checkbox = document.getElementById("condition");
     if (checkbox.checked) {
       // Se la checkbox è selezionata, indirizza l'utente alla nuova pagina
-      window.location.href = "pagina2.html";
+      window.location.href = "difficoltaextra.html";
     } else {
       // Altrimenti, mostra un messaggio di avviso
       alert("Please check the checkbox before proceeding.");

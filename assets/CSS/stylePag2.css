@@ -37,6 +37,10 @@
     0px 4px 0px 0px #1f2020, 0px 5px 0px 0px #252929,
     0px 5px 0px 0px rgba(0, 0, 0, 0.15);
 }
+
+.disabilitato {
+  pointer-events: none;
+}
 #numberQuestion {
   position: absolute;
   top: 91%;
@@ -204,4 +208,5 @@ footer {
 }
 .incorrect {
   background-color: red;
-  color: white;}
+  color: white;
+}
