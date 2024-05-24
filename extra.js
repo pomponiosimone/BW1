@@ -138,3 +138,4 @@ function pressButton() {
     //console.log(hardQ);
   });
 }
+pressButton();
