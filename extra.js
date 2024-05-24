@@ -98,6 +98,11 @@ function pressButton() {
   const buttonEasy = document.createElement("button");
   const buttonMedium = document.createElement("button");
   const buttonHard = document.createElement("button");
+  //assegno ai bottoni la stessa classe
+  buttonEasy.classList.add("modalita");
+  buttonMedium.classList.add("modalita");
+  buttonHard.classList.add("modalita");
+
   seleziona.append(buttonEasy, buttonMedium, buttonHard);
   buttonEasy.textContent = "Easy";
   buttonMedium.innerText = "Medium";
