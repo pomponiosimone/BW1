@@ -61,7 +61,7 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "medium",
     question:
       "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
@@ -86,29 +86,58 @@ const questions = [
   {
     category: "Science: Computers",
     type: "multiple",
-    difficulty: "easy",
+    difficulty: "hard",
     question:
       "Which programming language shares its name with an island in Indonesia?",
     correct_answer: "Java",
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
+
+// creo i bottoni che selezionino la difficoltà delle domande e ti rimandino alla pagina domande.js
 function pressButton() {
   const seleziona = document.getElementById("seleziona");
   const buttonEasy = document.createElement("button");
   const buttonMedium = document.createElement("button");
   const buttonHard = document.createElement("button");
-  seleziona.append(buttonEasy, buttonMedium, buttonHard);
+  const divInput = document.createElement("div");
+  const input = document.createElement("input");
+  input.setAttribute("type", "number");
+  input.setAttribute("max", "20");
+  input.setAttribute(
+    "placeholder",
+    "Quante domande vuoi ricevere...(da 1 a 20)"
+  );
+  divInput.appendChild(input);
+  questions.length = input.value;
+  seleziona.append(divInput, buttonEasy, buttonMedium, buttonHard);
   buttonEasy.textContent = "Easy";
   buttonMedium.innerText = "Medium";
   buttonHard.innerHTML = "Hard";
   buttonEasy.addEventListener("click", (event) => {
     event.preventDefault();
     const easyQ = questions.filter(
-      (question) => questions["difficulty"] === "easy"
+      (question) => question.difficulty === "easy"
     );
     //mostraDomande();
-    console.log(easyQ.length);
+    window.location.href = "./pagina2.html";
+    //console.log(easyQ);
+  });
+  buttonMedium.addEventListener("click", (event) => {
+    event.preventDefault();
+    const mediumQ = questions.filter(
+      (question) => question.difficulty === "medium"
+    );
+    window.location.href = "./pagina2.html";
+    //console.log(mediumQ);
+  });
+  buttonHard.addEventListener("click", (event) => {
+    event.preventDefault();
+    const hardQ = questions.filter(
+      (question) => question.difficulty === "hard"
+    );
+    window.location.href = "./pagina2.html";
+    //console.log(hardQ);
   });
 }
 pressButton();
