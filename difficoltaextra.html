@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/CSS/reset.css" />
     <link rel="stylesheet" href="./assets/CSS/style.css" />
+    <link rel="stylesheet" href="/assets/CSS/difficoltaextra.css" />
   </head>
   <body>
     <header>
@@ -14,12 +15,24 @@
     <main>
       <div id="titolo">
         <h1>Benchmark</h1>
-        <h3>Scegli la Difficoltà dell'Esame:</h3>
+        <h3 class="purpleColor">Scegli la Difficoltà dell'Esame:</h3>
       </div>
       <div id="seleziona">
         <!-- <button>Easy</button>
         <button>Medium</button>
         <button>Hard</button> -->
+      </div>
+      <div id="selezionaNumero">
+        <p class="purpleColor">Scegli il numero di domane:</p>
+        <form>
+          <input
+            id="questionNumber"
+            type="number"
+            placeholder="question number"
+            min="10"
+          />
+          <button class="glowButton">Start</button>
+        </form>
       </div>
     </main>
     <script src="./extra.js"></script>

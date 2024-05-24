@@ -100,6 +100,12 @@ function pressButton() {
   const buttonEasy = document.createElement("button");
   const buttonMedium = document.createElement("button");
   const buttonHard = document.createElement("button");
+  //assegno ai bottoni la stessa classe
+  buttonEasy.classList.add("modalita");
+  buttonMedium.classList.add("modalita");
+  buttonHard.classList.add("modalita");
+
+  seleziona.append(buttonEasy, buttonMedium, buttonHard);
   const divInput = document.createElement("div");
   const input = document.createElement("input");
   input.setAttribute("type", "number");
