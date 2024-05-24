@@ -23,12 +23,13 @@ function createPieChart(punteggio, questions) {
     // dobbiamo determinare se l'angolo del segmento è maggiore di 180 gradi
     const arc = sliceAngolo > 180 ? 1 : 0;
 
+    //calcoliamo le coordinate del cerchio trasparente dentro la graffa
     const ix1 = innerRadius * Math.cos(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
     const iy1 = innerRadius * Math.sin(((angoloIniziale - sliceAngolo) * Math.PI) / 180);
     const ix2 = innerRadius * Math.cos((angoloIniziale * Math.PI) / 180);
     const iy2 = innerRadius * Math.sin((angoloIniziale * Math.PI) / 180);
 
-    // stringa per disegnare il segmento (path data)
+    // stringa di comando per disegnare il segmento (path data)
     const pathData = `
         M ${150 + x1} ${150 + y1}
         A ${radius} ${radius} 0 ${arc} 1 ${150 + x2} ${150 + y2}
@@ -58,8 +59,7 @@ function createPieChart(punteggio, questions) {
 
   svg.appendChild(circle);
 
-  // aggiungiamo un testo al centro del grafico
-  // se il voto è maggiore a 6 stampa "congratulazioni", altrimenti stampa "hai fallito"
+  // aggiungiamo un testo determinando in base al punteggio
   const text =
     punteggio >= 6
       ? [
@@ -83,14 +83,15 @@ function createPieChart(punteggio, questions) {
   text.forEach((line, index) => {
     const textElement = document.createElementNS("http://www.w3.org/2000/svg", "text");
     textElement.setAttribute("x", "150");
-    textElement.setAttribute("y", 100 + index * 20 - 10);
+    textElement.setAttribute("y", 100 + index * 20 - 10); //aggiungiamo uno spazio tra le righe
     textElement.setAttribute("text-anchor", "middle");
     // textElement.setAttribute("dy", ".3em");
     // textElement.setAttribute("font-size", "12");
     textElement.setAttribute("font-family", "Arial");
     textElement.setAttribute("fill", "white");
-    textElement.setAttribute("fill", index === 1 ? "#00ffff" : "white");
+    textElement.setAttribute("fill", index === 1 ? "#00ffff" : "white"); //la seconda ha un colore "#00ffff"
 
+    //impostiamo uno stile diverso per le prime due righe
     if (index < 2) {
       textElement.setAttribute("font-size", "15");
       textElement.setAttribute("font-weight", "bold");
