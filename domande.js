@@ -253,3 +253,4 @@ window.onload = (event) => {
   timer(60);
   console.log("page is fully loaded");
 };
+////nota
